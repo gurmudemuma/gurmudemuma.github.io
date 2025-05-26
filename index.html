@@ -3,41 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Cache-Control"
-      content="no-cache, no-store, must-revalidate"
-    />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <title>Gurmu Demuma | Professional Portfolio</title>
-    <meta
-      name="description"
-      content="Gurmu Demuma's Professional Portfolio - Banking IT Specialist and Data Science Student"
-    />
-    <meta
-      name="keywords"
-      content="banking IT, data management, computer science, portfolio, CBE, data science"
-    />
-    <meta
-      property="og:title"
-      content="Gurmu Demuma, B.Sc. | Professional Portfolio"
-    />
+    <meta name="description" content="Gurmu Demuma's Professional Portfolio - Banking IT Specialist and Data Science Student" />
+    <meta name="keywords" content="banking IT, data management, computer science, portfolio, CBE, data science" />
+    <meta property="og:title" content="Gurmu Demuma, B.Sc. | Professional Portfolio" />
     <meta property="og:image" content="https://yourdomain.com/profile.jpg" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-V7Q26XTD8V"
-    ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V7Q26XTD8V"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-V7Q26XTD8V");
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V7Q26XTD8V');
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
@@ -302,20 +282,22 @@
         transform: translateY(-3px);
       }
 
+      /* Improved Resume Styles */
       #resumeContent {
         width: 100%;
         max-width: 800px;
         margin: 0 auto;
-        font-size: 14px;
-        line-height: 1.4;
+        font-size: 12px;
+        line-height: 1.3;
+        color: #333;
       }
 
       .resume-header {
         display: flex;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
         border-bottom: 2px solid var(--secondary-color);
-        padding-bottom: 15px;
       }
 
       .resume-photo {
@@ -332,47 +314,60 @@
       }
 
       .resume-name {
-        font-size: 24px;
+        font-size: 20px;
         margin: 0;
         color: var(--primary-color);
+        font-weight: 700;
       }
 
       .resume-title {
-        font-size: 16px;
-        margin: 5px 0;
+        font-size: 14px;
+        margin: 3px 0;
         color: var(--text-light);
       }
 
       .resume-contact {
-        font-size: 12px;
-        margin: 5px 0;
+        font-size: 11px;
+        margin: 3px 0;
+        color: var(--text-color);
       }
 
       .resume-section {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
+        page-break-inside: avoid;
       }
 
       .resume-section h3 {
-        font-size: 16px;
-        margin-bottom: 8px;
+        font-size: 14px;
+        margin-bottom: 5px;
         color: var(--primary-color);
         border-bottom: 1px solid #eee;
-        padding-bottom: 3px;
+        padding-bottom: 2px;
+        font-weight: 600;
       }
 
-      .resume-section ul {
-        padding-left: 20px;
+      .resume-section h4 {
+        font-size: 12px;
+        margin: 3px 0;
+        font-weight: 500;
+      }
+
+      .resume-section p, .resume-section ul {
         margin: 5px 0;
       }
 
+      .resume-section ul {
+        padding-left: 15px;
+      }
+
       .resume-section li {
-        margin-bottom: 5px;
+        margin-bottom: 3px;
       }
 
       .resume-two-column {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 15px;
       }
 
       .resume-column {
@@ -490,6 +485,56 @@
         margin-top: 0.5rem;
       }
 
+      .theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .theme-toggle:hover {
+        transform: scale(1.1);
+        background: var(--secondary-color);
+      }
+
+      body.dark-mode .theme-toggle {
+        background: #333;
+        color: #bb86fc;
+      }
+
+      @media (max-width: 1024px) {
+        .container {
+          grid-template-columns: 250px 1fr;
+        }
+        
+        .main-content {
+          padding: 2rem;
+        }
+        
+        .profile-img {
+          width: 120px;
+          height: 120px;
+        }
+        
+        .name {
+          font-size: 1.3rem;
+        }
+        
+        .section-title {
+          font-size: 1.7rem;
+        }
+      }
+
       @media (max-width: 768px) {
         .container {
           grid-template-columns: 1fr;
@@ -497,16 +542,33 @@
 
         .sidebar {
           text-align: center;
+          padding: 1.5rem;
+        }
+
+        .profile-img {
+          width: 100px;
+          height: 100px;
         }
 
         .nav {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
+          margin-top: 1rem;
         }
 
         .nav-item {
-          margin: 0.5rem;
+          margin: 0.3rem;
+          padding: 0.6rem 0.8rem;
+          font-size: 0.9rem;
+        }
+
+        .main-content {
+          padding: 1.5rem;
+        }
+
+        .section-title {
+          font-size: 1.5rem;
         }
 
         .timeline::after {
@@ -541,6 +603,59 @@
           margin-right: 0;
           margin-bottom: 15px;
         }
+        
+        .badge {
+          flex: 1 1 100%;
+        }
+        
+        .resume-two-column {
+          flex-direction: column;
+        }
+        
+        .resume-column {
+          min-width: 100%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .sidebar {
+          padding: 1rem;
+        }
+        
+        .main-content {
+          padding: 1rem;
+        }
+        
+        .section-title {
+          font-size: 1.3rem;
+        }
+        
+        .about-text {
+          font-size: 0.95rem;
+        }
+        
+        .timeline-content {
+          padding: 15px;
+        }
+        
+        .resume-download {
+          width: 100%;
+          text-align: center;
+          padding: 0.8rem;
+        }
+        
+        .form-group label {
+          font-size: 0.9rem;
+        }
+        
+        .form-control {
+          padding: 0.7rem;
+          font-size: 0.9rem;
+        }
+        
+        .submit-btn {
+          width: 100%;
+        }
       }
 
       body.dark-mode {
@@ -573,77 +688,73 @@
         color: #e0e0e0;
       }
 
+      /* Print-specific improvements */
       @media print {
+        #resumeContent {
+          padding: 0.5in;
+          font-size: 11px;
+        }
+
+        .resume-header {
+          margin-top: 0;
+        }
+
+        .resume-photo {
+          width: 70px;
+          height: 70px;
+        }
+
+        .resume-name {
+          font-size: 18px;
+        }
+
+        .resume-title {
+          font-size: 12px;
+        }
+
+        .resume-contact {
+          font-size: 10px;
+        }
+
+        .resume-section h3 {
+          font-size: 13px;
+        }
+
+        .resume-section h4 {
+          font-size: 11px;
+        }
+
+        .resume-section ul {
+          padding-left: 12px;
+        }
+
         body {
           background-color: white !important;
           color: black !important;
-          font-size: 12px !important;
         }
 
         .container {
           display: block !important;
         }
 
-        .sidebar,
-        .theme-toggle {
+        .sidebar, .theme-toggle {
           display: none !important;
         }
 
         .main-content {
           padding: 0 !important;
           box-shadow: none !important;
+          background-color: white !important;
         }
-
-        #resumeContent {
-          padding: 0.5in;
-          margin: 0 auto;
-        }
-
-        .resume-header {
-          margin-top: 0;
-        }
-      }
-      /* Dark Mode Toggle - Global Position */
-      .theme-toggle {
-        position: fixed; /* Changed from absolute to fixed */
-        top: 20px;
-        right: 20px;
-        background: var(--primary-color);
-        color: white;
-        border: none;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        font-size: 1.2rem;
-        cursor: pointer;
-        z-index: 1000;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
-      }
-
-      .theme-toggle:hover {
-        transform: scale(1.1);
-        background: var(--secondary-color);
-      }
-
-      /* Adjust for dark mode */
-      body.dark-mode .theme-toggle {
-        background: #333;
-        color: #bb86fc;
       }
     </style>
   </head>
   <body>
-    <!-- Dark Mode Toggle (Global) -->
     <button class="theme-toggle" id="themeToggle">
       <i class="fas fa-moon"></i>
     </button>
     <div class="container">
       <div class="sidebar">
-        <!-- <button class="theme-toggle" id="themeToggle">
-                <i class="fas fa-moon"></i>
-            </button> -->
-
         <div class="profile">
           <img
             src="image/Portfolio.jpg"
@@ -664,39 +775,19 @@
         </div>
 
         <div class="nav">
-          <a href="#" class="nav-item active" data-section="home"
-            ><i class="fas fa-home"></i> Home</a
-          >
-          <a href="#" class="nav-item" data-section="about"
-            ><i class="fas fa-user"></i> About</a
-          >
-          <a href="#" class="nav-item" data-section="experience"
-            ><i class="fas fa-briefcase"></i> Experience</a
-          >
-          <a href="#" class="nav-item" data-section="education"
-            ><i class="fas fa-graduation-cap"></i> Education</a
-          >
-          <a href="#" class="nav-item" data-section="skills"
-            ><i class="fas fa-code"></i> Skills</a
-          >
-          <a href="#" class="nav-item" data-section="certifications"
-            ><i class="fas fa-certificate"></i> Certifications</a
-          >
-          <a href="#" class="nav-item" data-section="resume"
-            ><i class="fas fa-file-alt"></i> Resume</a
-          >
-          <a href="#" class="nav-item" data-section="contact"
-            ><i class="fas fa-envelope"></i> Contact</a
-          >
+          <a href="#" class="nav-item active" data-section="home"><i class="fas fa-home"></i> Home</a>
+          <a href="#" class="nav-item" data-section="about"><i class="fas fa-user"></i> About</a>
+          <a href="#" class="nav-item" data-section="experience"><i class="fas fa-briefcase"></i> Experience</a>
+          <a href="#" class="nav-item" data-section="education"><i class="fas fa-graduation-cap"></i> Education</a>
+          <a href="#" class="nav-item" data-section="skills"><i class="fas fa-code"></i> Skills</a>
+          <a href="#" class="nav-item" data-section="certifications"><i class="fas fa-certificate"></i> Certifications</a>
+          <a href="#" class="nav-item" data-section="resume"><i class="fas fa-file-alt"></i> Resume</a>
+          <a href="#" class="nav-item" data-section="contact"><i class="fas fa-envelope"></i> Contact</a>
         </div>
 
         <div class="social-links" style="margin-top: auto">
-          <a href="https://www.linkedin.com/in/gurmu-demuma-a846322b1/"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          <a href="https://github.com/gurmudemuma?tab=repositories"
-            ><i class="fab fa-github"></i
-          ></a>
+          <a href="https://www.linkedin.com/in/gurmu-demuma-a846322b1/"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/gurmudemuma?tab=repositories"><i class="fab fa-github"></i></a>
         </div>
       </div>
 
@@ -717,7 +808,7 @@
             <div class="badge">
               <i class="fas fa-building"></i>
               <div>
-                <h3>Commercial Bank</h3>
+                <h3>Commercial Bank of Ethiopia</h3>
                 <p>Information Systems Officer</p>
               </div>
             </div>
@@ -757,9 +848,7 @@
               <li>Advanced analytics for financial decision-making</li>
               <li>Data governance and quality management</li>
               <li>Process automation through machine learning</li>
-              <li>
-                Cross-functional collaboration between IT and business units
-              </li>
+              <li>Cross-functional collaboration between IT and business units</li>
             </ul>
           </div>
         </div>
@@ -774,26 +863,11 @@
                 <h3>Junior Information System Officer II</h3>
                 <h4>Commercial Bank of Ethiopia</h4>
                 <ul>
-                  <li>
-                    Lead data management transformation initiatives to enhance
-                    data quality and accessibility across 1000+ branches
-                  </li>
-                  <li>
-                    Develop and implement data governance policies adopted
-                    bank-wide
-                  </li>
-                  <li>
-                    Design automated data validation processes reducing errors
-                    by 35%
-                  </li>
-                  <li>
-                    Collaborate with cross-functional teams to optimize core
-                    banking systems
-                  </li>
-                  <li>
-                    Analyze business requirements and propose technical
-                    solutions
-                  </li>
+                  <li>Lead data management transformation initiatives to enhance data quality and accessibility across 1800+ branches</li>
+                  <li>Develop and implement data governance policies adopted bank-wide</li>
+                  <li>Design automated data validation processes reducing errors by 35%</li>
+                  <li>Collaborate with cross-functional teams to optimize core banking systems</li>
+                  <li>Analyze business requirements and propose technical solutions</li>
                 </ul>
               </div>
             </div>
@@ -804,17 +878,9 @@
                 <h3>Junior Information System Officer I</h3>
                 <h4>Commercial Bank of Ethiopia</h4>
                 <ul>
-                  <li>
-                    Assisted in system upgrades affecting all branch operations
-                  </li>
-                  <li>
-                    Developed training materials for new banking software
-                    implementations
-                  </li>
-                  <li>
-                    Participated in data migration projects with 99.8% accuracy
-                    rate
-                  </li>
+                  <li>Assisted in system upgrades affecting all branch operations</li>
+                  <li>Developed training materials for new banking software implementations</li>
+                  <li>Participated in data migration projects with 99.8% accuracy rate</li>
                   <li>Provided technical support for core banking systems</li>
                 </ul>
               </div>
@@ -826,10 +892,7 @@
                 <h3>Information System Trainee</h3>
                 <h4>Commercial Bank of Ethiopia</h4>
                 <ul>
-                  <li>
-                    Gained comprehensive understanding of banking operations and
-                    IT systems
-                  </li>
+                  <li>Gained comprehensive understanding of banking operations and IT systems</li>
                   <li>Assisted in troubleshooting technical issues</li>
                   <li>Participated in system documentation projects</li>
                   <li>Supported senior officers in daily IT operations</li>
@@ -843,10 +906,7 @@
           <h2 class="section-title">Education</h2>
 
           <div class="resume-section">
-            <h3>
-              Master of Science in Computer Science (Data Science
-              Specialization)
-            </h3>
+            <h3>Master of Science in Computer Science (Data Science Specialization)</h3>
             <h4>American College of Technology | 2024 - Present</h4>
             <p>
               Currently advancing my expertise in data science through rigorous
@@ -881,13 +941,8 @@
             <h3>Capstone Project</h3>
             <h4>Web-based Civil and Vital Event Registration System</h4>
             <ul>
-              <li>
-                Developed a comprehensive system for recording and managing
-                civil events
-              </li>
-              <li>
-                Implemented secure user authentication and data validation
-              </li>
+              <li>Developed a comprehensive system for recording and managing civil events</li>
+              <li>Implemented secure user authentication and data validation</li>
               <li>Designed intuitive admin interfaces for data management</li>
               <li>Technologies used: Django, PostgreSQL, JavaScript</li>
             </ul>
@@ -900,19 +955,10 @@
           <div class="resume-section">
             <h3>Programming & Technologies</h3>
             <ul>
-              <li>
-                <strong>Languages:</strong> Python, SQL, JavaScript, HTML/CSS
-              </li>
-              <li>
-                <strong>Data Science:</strong> Pandas, NumPy, Scikit-learn,
-                TensorFlow, Data Visualization
-              </li>
-              <li>
-                <strong>Database:</strong> MySQL, PostgreSQL, Database Design
-              </li>
-              <li>
-                <strong>Web Development:</strong> Django, Flask, REST APIs
-              </li>
+              <li><strong>Languages:</strong> Python, SQL, JavaScript, HTML/CSS</li>
+              <li><strong>Data Science:</strong> Pandas, NumPy, Scikit-learn, TensorFlow, Data Visualization</li>
+              <li><strong>Database:</strong> MySQL, PostgreSQL, Database Design</li>
+              <li><strong>Web Development:</strong> Django, Flask, REST APIs</li>
               <li><strong>Other:</strong> Git, Linux, Docker</li>
             </ul>
           </div>
@@ -947,9 +993,7 @@
 
           <div class="certification-card">
             <h3>
-              <a href="My-certificates/Data science_certificate.pdf" download
-                >IBM Data Science Professional Certificate</a
-              >
+              <a href="My-certificates/Data science_certificate.pdf" download>IBM Data Science Professional Certificate</a>
             </h3>
             <div class="certification-meta">
               <span>Coursera Certification</span>
@@ -964,11 +1008,7 @@
 
           <div class="certification-card">
             <h3>
-              <a
-                href="My-certificates/Python and statistics For Financial Analysis.pdf"
-                download
-                >Python and Statistics for Financial Analysis</a
-              >
+              <a href="My-certificates/Python and statistics For Financial Analysis.pdf" download>Python and Statistics for Financial Analysis</a>
             </h3>
             <div class="certification-meta">
               <span>Coursera Certification</span>
@@ -983,11 +1023,7 @@
 
           <div class="certification-card">
             <h3>
-              <a
-                href="My-certificates/English Communication_certificate.pdf"
-                download
-                >Influencing: Storytelling, Change Management & Governance</a
-              >
+              <a href="My-certificates/English Communication_certificate.pdf" download>Influencing: Storytelling, Change Management & Governance</a>
             </h3>
             <div class="certification-meta">
               <span>Macquarie University</span>
@@ -1002,11 +1038,7 @@
 
           <div class="certification-card">
             <h3>
-              <a
-                href="My-certificates/KPMG-Advanced Change management.jpg"
-                download
-                >Advanced Change Management</a
-              >
+              <a href="My-certificates/KPMG-Advanced Change management.jpg" download>Advanced Change Management</a>
             </h3>
             <div class="certification-meta">
               <span>KPMG</span>
@@ -1021,9 +1053,7 @@
 
           <div class="certification-card">
             <h3>
-              <a href="My-certificates/Python_certificate.pdf" download
-                >Python Programming Certificate</a
-              >
+              <a href="My-certificates/Python_certificate.pdf" download>Python Programming Certificate</a>
             </h3>
             <div class="certification-meta">
               <span>Coursera Certification</span>
@@ -1038,9 +1068,7 @@
 
         <div class="section" id="resume">
           <h2 class="section-title">Resume</h2>
-          <a href="#" class="resume-download" id="downloadResume"
-            ><i class="fas fa-download"></i> Download One-Page Resume</a
-          >
+          <a href="#" class="resume-download" id="downloadResume"><i class="fas fa-download"></i> Download One-Page Resume</a>
 
           <div id="resumeContent">
             <div class="resume-header">
@@ -1049,16 +1077,15 @@
                 alt="Profile Photo"
                 class="resume-photo"
                 id="resumePhoto"
+                crossorigin="anonymous"
               />
               <div class="resume-header-text">
                 <h1 class="resume-name">Gurmu Demuma, B.Sc.</h1>
                 <p class="resume-title">
-                  Junior Information System Officer II | MSc Student in Data
-                  Science
+                  Junior Information System Officer II | MSc Student in Data Science
                 </p>
                 <p class="resume-contact">
-                  Email: gurmud5@gmail.com | Phone: +251-9-26-10-83-20 |
-                  Location: Addis Ababa, Ethiopia
+                  Email: gurmud5@gmail.com | Phone: +251-9-26-10-83-20 | Location: Addis Ababa, Ethiopia
                 </p>
               </div>
             </div>
@@ -1066,11 +1093,7 @@
             <div class="resume-section">
               <h3>Professional Summary</h3>
               <p>
-                Computer Science professional currently pursuing a Master's in
-                Data Science while working in banking information systems.
-                Combines academic knowledge in advanced analytics with practical
-                experience in data management transformation at Ethiopia's
-                largest financial institution.
+                Computer Science professional currently pursuing a Master's in Data Science while working in banking information systems. Combines academic knowledge in advanced analytics with practical experience in data management transformation at Ethiopia's largest financial institution.
               </p>
             </div>
 
@@ -1096,7 +1119,7 @@
                     Jul 2023 - Jan 2024
                   </p>
                   <ul>
-                    <li>Assisted in system upgrades for 1000+ branches</li>
+                    <li>Assisted in system upgrades for 1800+ branches</li>
                     <li>Developed training materials</li>
                     <li>Participated in data migration projects</li>
                   </ul>
@@ -1105,8 +1128,7 @@
                 <div class="resume-section">
                   <h3>Education</h3>
                   <p>
-                    <strong>MSc in Computer Science (Data Science)</strong
-                    ><br />
+                    <strong>MSc in Computer Science (Data Science)</strong><br />
                     American College of Technology<br />
                     2024 - Present
                   </p>
@@ -1123,16 +1145,10 @@
                 <div class="resume-section">
                   <h3>Technical Skills</h3>
                   <ul>
-                    <li>
-                      <strong>Programming:</strong> Python, SQL, JavaScript
-                    </li>
-                    <li>
-                      <strong>Data Science:</strong> Pandas, NumPy, Scikit-learn
-                    </li>
+                    <li><strong>Programming:</strong> Python, SQL, JavaScript</li>
+                    <li><strong>Data Science:</strong> Pandas, NumPy, Scikit-learn</li>
                     <li><strong>Database:</strong> MySQL, PostgreSQL</li>
-                    <li>
-                      <strong>Banking IT:</strong> Core Systems, Data Governance
-                    </li>
+                    <li><strong>Banking IT:</strong> Core Systems, Data Governance</li>
                     <li><strong>Tools:</strong> Git, Linux, Docker</li>
                   </ul>
                 </div>
@@ -1163,55 +1179,23 @@
 
         <div class="section" id="contact">
           <h2 class="section-title">Contact</h2>
-          <form
-            action="https://formspree.io/f/mbloeqra"
-            method="POST"
-            class="contact-form"
-            id="contactForm"
-          >
-            <input
-              type="hidden"
-              name="_subject"
-              value="New Portfolio Message"
-            />
+          <form action="https://formspree.io/f/mbloeqra" method="POST" class="contact-form" id="contactForm">
+            <input type="hidden" name="_subject" value="New Portfolio Message" />
             <div class="form-group">
               <label for="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                class="form-control"
-                required
-              />
+              <input type="text" id="name" name="name" class="form-control" required />
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="form-control"
-                required
-              />
+              <input type="email" id="email" name="email" class="form-control" required />
             </div>
             <div class="form-group">
               <label for="subject">Subject</label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                class="form-control"
-                required
-              />
+              <input type="text" id="subject" name="subject" class="form-control" required />
             </div>
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                class="form-control"
-                required
-              ></textarea>
+              <textarea id="message" name="message" class="form-control" required></textarea>
             </div>
             <button type="submit" class="submit-btn">Send Message</button>
           </form>
@@ -1220,10 +1204,7 @@
             <h3>Direct Contact</h3>
             <p><i class="fas fa-envelope"></i> Email: gurmud5@gmail.com</p>
             <p><i class="fas fa-phone"></i> Phone: +251-9-26-10-83-20</p>
-            <p>
-              <i class="fas fa-map-marker-alt"></i> Location: Addis Ababa,
-              Ethiopia
-            </p>
+            <p><i class="fas fa-map-marker-alt"></i> Location: Addis Ababa, Ethiopia</p>
           </div>
         </div>
       </div>
@@ -1234,128 +1215,122 @@
       document.querySelectorAll(".nav-item").forEach((item) => {
         item.addEventListener("click", function (e) {
           e.preventDefault();
-
-          // Remove active class from all nav items
           document.querySelectorAll(".nav-item").forEach((navItem) => {
             navItem.classList.remove("active");
           });
-
-          // Add active class to clicked nav item
           this.classList.add("active");
-
-          // Hide all sections
           document.querySelectorAll(".section").forEach((section) => {
             section.classList.remove("active");
           });
-
-          // Show selected section
           const sectionId = this.getAttribute("data-section");
-          const section = document.getElementById(sectionId);
-          if (section) {
-            section.classList.add("active");
-          }
+          document.getElementById(sectionId).classList.add("active");
         });
       });
 
       // Profile Image Upload
-      document
-        .getElementById("profileImage")
-        .addEventListener("click", function () {
-          document.getElementById("imageUpload").click();
-        });
+      document.getElementById("profileImage").addEventListener("click", function() {
+        document.getElementById("imageUpload").click();
+      });
 
-      document
-        .getElementById("imageUpload")
-        .addEventListener("change", function (e) {
-          if (e.target.files && e.target.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function (event) {
-              const img = document.getElementById("profileImage");
-              img.src = event.target.result;
-              localStorage.setItem("profileImage", event.target.result);
-            };
-            reader.readAsDataURL(e.target.files[0]);
-          }
-        });
-
-      // Load saved profile image
-      window.addEventListener("DOMContentLoaded", () => {
-        const savedImage = localStorage.getItem("profileImage");
-        if (savedImage) {
-          document.getElementById("profileImage").src = savedImage;
+      document.getElementById("imageUpload").addEventListener("change", function(e) {
+        if (e.target.files && e.target.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function(event) {
+            document.getElementById("profileImage").src = event.target.result;
+            document.getElementById("resumePhoto").src = event.target.result;
+            localStorage.setItem("profileImage", event.target.result);
+          };
+          reader.readAsDataURL(e.target.files[0]);
         }
       });
 
       // Dark Mode Toggle
-      document
-        .getElementById("themeToggle")
-        .addEventListener("click", function () {
-          document.body.classList.toggle("dark-mode");
-          const icon = this.querySelector("i");
-          if (document.body.classList.contains("dark-mode")) {
-            icon.classList.remove("fa-moon");
-            icon.classList.add("fa-sun");
-            localStorage.setItem("darkMode", "enabled");
-          } else {
-            icon.classList.remove("fa-sun");
-            icon.classList.add("fa-moon");
-            localStorage.setItem("darkMode", "disabled");
+      document.getElementById("themeToggle").addEventListener("click", function() {
+        document.body.classList.toggle("dark-mode");
+        const icon = this.querySelector("i");
+        if (document.body.classList.contains("dark-mode")) {
+          icon.classList.replace("fa-moon", "fa-sun");
+          localStorage.setItem("darkMode", "enabled");
+        } else {
+          icon.classList.replace("fa-sun", "fa-moon");
+          localStorage.setItem("darkMode", "disabled");
+        }
+      });
+
+      // Enhanced PDF Generation with better image handling
+      document.getElementById("downloadResume").addEventListener("click", function(e) {
+        e.preventDefault();
+        
+        const originalText = this.innerHTML;
+        this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+        this.disabled = true;
+
+        // Create clone with preserved styles
+        const element = document.getElementById("resumeContent").cloneNode(true);
+        
+        // Ensure the image is loaded properly for PDF
+        const photo = element.querySelector(".resume-photo");
+        if (photo) {
+          photo.style.maxWidth = "70px";
+          photo.style.maxHeight = "70px";
+        }
+
+        const opt = {
+          margin: 10,
+          filename: "Gurmu_Demuma_Resume.pdf",
+          image: { 
+            type: 'jpeg', 
+            quality: 0.98 
+          },
+          html2canvas: {
+            scale: 2, // Higher scale for better quality
+            logging: false,
+            useCORS: true,
+            allowTaint: true,
+            scrollX: 0,
+            scrollY: 0,
+            onclone: function(clonedDoc) {
+              // Force styles for PDF
+              clonedDoc.body.style.fontSize = '11px';
+              clonedDoc.body.style.lineHeight = '1.3';
+              
+              // Ensure photo is properly sized
+              const clonedPhoto = clonedDoc.querySelector(".resume-photo");
+              if (clonedPhoto) {
+                clonedPhoto.style.width = '70px';
+                clonedPhoto.style.height = '70px';
+                clonedPhoto.style.objectFit = 'cover';
+              }
+              
+              // Adjust spacing for PDF
+              const sections = clonedDoc.querySelectorAll(".resume-section");
+              sections.forEach(section => {
+                section.style.marginBottom = '8px';
+              });
+            }
+          },
+          jsPDF: {
+            unit: "mm",
+            format: "a4",
+            orientation: "portrait"
+          },
+          pagebreak: { 
+            mode: ['avoid-all', 'css', 'legacy'] 
           }
-        });
+        };
 
-      // Download Resume with PDF Generation
-      document
-        .getElementById("downloadResume")
-        .addEventListener("click", (e) => {
-          e.preventDefault();
-
-          // Clone the resume content to avoid affecting the displayed version
-          const element = document
-            .getElementById("resumeContent")
-            .cloneNode(true);
-
-          // Ensure the photo is included in the PDF
-          const photo = element.querySelector("#resumePhoto");
-          if (photo) {
-            photo.src = document.getElementById("profileImage").src;
-          }
-
-          // Set PDF options for one-page resume
-          const opt = {
-            margin: 10,
-            filename: "Gurmu_Demuma_Resume.pdf",
-            image: { type: "jpeg", quality: 0.98 },
-            html2canvas: {
-              scale: 0.75, // Smaller scale to fit on one page
-              logging: true,
-              useCORS: true,
-              allowTaint: true,
-              scrollX: 0,
-              scrollY: 0,
-            },
-            jsPDF: {
-              unit: "mm",
-              format: "a4",
-              orientation: "portrait",
-              compress: true,
-            },
-            pagebreak: { mode: "avoid-all" }, // Force single page
-          };
-
-          // Show loading state
-          const originalText = e.target.innerHTML;
-          e.target.innerHTML =
-            '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
-          e.target.disabled = true;
-
-          // Generate PDF
-          html2pdf()
-            .set(opt)
-            .from(element)
-            .toPdf()
-            .get("pdf")
-            .then(function (pdf) {
-              // Add watermark
+        // Generate PDF
+        html2pdf()
+          .set(opt)
+          .from(element)
+          .toPdf()
+          .get("pdf")
+          .then(function(pdf) {
+            // Add watermark if desired
+            const totalPages = pdf.internal.getNumberOfPages();
+            
+            for (let i = 1; i <= totalPages; i++) {
+              pdf.setPage(i);
               pdf.setFontSize(30);
               pdf.setTextColor(200, 200, 200);
               pdf.setGState(new pdf.GState({ opacity: 0.1 }));
@@ -1365,67 +1340,61 @@
                 pdf.internal.pageSize.getHeight() / 2,
                 { angle: 45, align: "center" }
               );
-            })
-            .save()
-            .then(() => {
-              // Restore button text
-              e.target.innerHTML = originalText;
-              e.target.disabled = false;
-            });
-        });
-
-      // Working Contact Form with Formspree
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          const form = e.target;
-          const formData = new FormData(form);
-          const submitBtn = form.querySelector('button[type="submit"]');
-          const originalText = submitBtn.innerHTML;
-
-          // Show loading state
-          submitBtn.innerHTML =
-            '<i class="fas fa-spinner fa-spin"></i> Sending...';
-          submitBtn.disabled = true;
-
-          fetch(form.action, {
-            method: "POST",
-            body: formData,
-            headers: {
-              Accept: "application/json",
-            },
+            }
           })
-            .then((response) => {
-              if (response.ok) {
-                alert(
-                  "Thank you for your message! I will get back to you soon."
-                );
-                form.reset();
-              } else {
-                throw new Error("Network response was not ok");
-              }
-            })
-            .catch((error) => {
-              alert(
-                "There was a problem sending your message. Please try again later."
-              );
-              console.error("Error:", error);
-            })
-            .finally(() => {
-              submitBtn.innerHTML = originalText;
-              submitBtn.disabled = false;
-            });
-        });
+          .save()
+          .finally(() => {
+            document.getElementById("downloadResume").innerHTML = originalText;
+            document.getElementById("downloadResume").disabled = false;
+          });
+      });
 
-      // Check for saved dark mode preference
+      // Contact Form
+      document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" }
+        })
+          .then(response => {
+            if (response.ok) {
+              alert("Thank you for your message! I will get back to you soon.");
+              form.reset();
+            } else {
+              throw new Error("Network response was not ok");
+            }
+          })
+          .catch(error => {
+            alert("There was a problem sending your message. Please try again later.");
+            console.error("Error:", error);
+          })
+          .finally(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+          });
+      });
+
+      // Initialize
       window.addEventListener("DOMContentLoaded", () => {
+        // Load profile image
+        const savedImage = localStorage.getItem("profileImage");
+        if (savedImage) {
+          document.getElementById("profileImage").src = savedImage;
+          document.getElementById("resumePhoto").src = savedImage;
+        }
+        
+        // Load dark mode preference
         if (localStorage.getItem("darkMode") === "enabled") {
           document.body.classList.add("dark-mode");
-          document
-            .getElementById("themeToggle")
-            .querySelector("i")
-            .classList.replace("fa-moon", "fa-sun");
+          document.querySelector("#themeToggle i").classList.replace("fa-moon", "fa-sun");
         }
       });
     </script>

@@ -10,8 +10,9 @@
     <meta name="description" content="Gurmu Demuma's Professional Portfolio - Banking IT Specialist and Data Science Student" />
     <meta name="keywords" content="banking IT, data management, computer science, portfolio, CBE, data science" />
     <meta property="og:title" content="Gurmu Demuma, B.Sc. | Professional Portfolio" />
-    <meta property="og:image" content="https://yourdomain.com/profile.jpg" />
+    <meta property="og:image" content="image/Portfolio.jpg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V7Q26XTD8V"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -282,31 +283,37 @@
         transform: translateY(-3px);
       }
 
-      /* Improved Resume Styles */
+      /* Modern Resume Styles */
       #resumeContent {
         width: 100%;
-        max-width: 800px;
-        margin: 0 auto;
-        font-size: 12px;
-        line-height: 1.3;
-        color: #333;
+        max-width: 800px; /* A4-like width */
+        margin: 20px auto; /* Add some margin for the on-page view */
+        font-family: 'Lato', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 11pt; /* Standard resume font size */
+        line-height: 1.5;
+        color: #444; /* Slightly softer text color */
+        background-color: #fff; /* Ensure white background for PDF */
+        padding: 30px; /* Add padding for on-page view */
+        box-shadow: 0 0 15px rgba(0,0,0,0.1); /* Subtle shadow for on-page view */
+        border-radius: 8px; /* Rounded corners for on-page view */
       }
 
       .resume-header {
         display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-        padding-bottom: 10px;
-        border-bottom: 2px solid var(--secondary-color);
+        align-items: flex-start; /* Align items to the top */
+        margin-bottom: 25px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e0e0e0; /* Lighter border */
       }
 
       .resume-photo {
-        width: 80px;
-        height: 80px;
+        width: 100px; /* Slightly larger photo */
+        height: 100px;
         border-radius: 50%;
         object-fit: cover;
-        border: 3px solid var(--secondary-color);
-        margin-right: 20px;
+        border: 4px solid var(--secondary-color);
+        margin-right: 25px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       }
 
       .resume-header-text {
@@ -314,65 +321,99 @@
       }
 
       .resume-name {
-        font-size: 20px;
-        margin: 0;
+        font-size: 26pt; /* Larger name */
+        margin: 0 0 5px 0;
         color: var(--primary-color);
         font-weight: 700;
+        letter-spacing: -0.5px;
       }
 
       .resume-title {
-        font-size: 14px;
-        margin: 3px 0;
-        color: var(--text-light);
+        font-size: 13pt;
+        margin: 0 0 10px 0;
+        color: var(--secondary-color); /* Use accent color for title */
+        font-weight: 400;
       }
 
       .resume-contact {
-        font-size: 11px;
-        margin: 3px 0;
-        color: var(--text-color);
+        font-size: 10pt;
+        color: #555;
+        line-height: 1.6;
+      }
+      .resume-contact p {
+        margin: 2px 0;
+        display: flex;
+        align-items: center;
+      }
+      .resume-contact i {
+        margin-right: 8px;
+        color: var(--secondary-color);
+        width: 16px; /* Ensure icon alignment */
+        text-align: center;
       }
 
       .resume-section {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         page-break-inside: avoid;
       }
 
-      .resume-section h3 {
-        font-size: 14px;
-        margin-bottom: 5px;
+      .resume-section h3 { /* Section Titles */
+        font-size: 14pt;
+        margin-bottom: 10px;
         color: var(--primary-color);
-        border-bottom: 1px solid #eee;
-        padding-bottom: 2px;
-        font-weight: 600;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid var(--secondary-color);
+        display: inline-block; /* To make border only as long as text */
       }
 
-      .resume-section h4 {
-        font-size: 12px;
-        margin: 3px 0;
-        font-weight: 500;
+      .resume-section h4 { /* Job Titles / Degree Names */
+        font-size: 12pt;
+        margin: 0 0 2px 0;
+        font-weight: 700;
+        color: #333;
+      }
+      
+      .resume-section .date-location { /* For dates and locations */
+        font-size: 10pt;
+        color: #777;
+        margin-bottom: 5px;
+        font-style: italic;
       }
 
       .resume-section p, .resume-section ul {
-        margin: 5px 0;
+        margin: 0 0 10px 0;
+        font-size: 10.5pt;
+        color: #555;
       }
 
       .resume-section ul {
-        padding-left: 15px;
+        padding-left: 20px; /* Standard bullet indentation */
+        list-style-type: disc; /* Or square, or none with custom bullets */
       }
 
       .resume-section li {
-        margin-bottom: 3px;
+        margin-bottom: 5px;
+        line-height: 1.6;
       }
 
       .resume-two-column {
         display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
+        flex-wrap: nowrap; /* Prevent wrapping to ensure two columns */
+        gap: 30px; /* Space between columns */
       }
 
       .resume-column {
         flex: 1;
-        min-width: 250px;
+        min-width: 0; /* Allow columns to shrink */
+      }
+      .resume-column:first-child {
+         /* flex-basis: 60%; /* Example: give more space to one column */
+      }
+      .resume-column:last-child {
+         /* flex-basis: 40%; */
       }
 
       .contact-form {
@@ -747,9 +788,242 @@
           background-color: white !important;
         }
       }
+/* Responsive Design */
+      @media (max-width: 1024px) {
+        .container {
+          grid-template-columns: 250px 1fr; /* Slightly smaller sidebar */
+        }
+        .main-content {
+          padding: 2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          grid-template-columns: 1fr; /* Single column layout */
+        }
+
+        .sidebar {
+          position: fixed; /* Make sidebar a slide-in menu */
+          left: -100%;
+          top: 0;
+          width: 280px;
+          height: 100%;
+          z-index: 1001; /* Above theme toggle */
+          transition: left 0.3s ease;
+          overflow-y: auto;
+          padding-top: 4rem; /* Space for a close button or header */
+        }
+
+        .sidebar.open {
+          left: 0;
+          box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+        }
+
+        .main-content {
+          padding: 1.5rem;
+        }
+
+        .profile-img {
+          width: 120px;
+          height: 120px;
+        }
+
+        .name {
+          font-size: 1.3rem;
+        }
+
+        .title {
+          font-size: 0.9rem;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+
+        .timeline::after {
+          left: 20px; /* Adjust timeline line for mobile */
+        }
+
+        .timeline-item {
+          width: 100%;
+          padding-left: 50px; /* Space for the dot */
+          padding-right: 10px;
+          left: 0 !important; /* Override inline style if any */
+        }
+
+        .timeline-item::after {
+          left: 10px; /* Position dot correctly */
+        }
+
+        .right::after, .left::after { /* Ensure dots are on the left */
+            left: 10px;
+        }
+        
+        .resume-two-column {
+            flex-direction: column;
+        }
+
+        .resume-column {
+            min-width: 100%;
+        }
+
+        .badges {
+          justify-content: center; /* Center badges on smaller screens */
+        }
+        .badge {
+          padding: 0.8rem 1.2rem;
+        }
+        .badge i {
+          font-size: 1.3rem;
+        }
+
+        .theme-toggle { /* Ensure theme toggle is accessible */
+            right: 15px;
+            top: 15px;
+        }
+
+        /* Hamburger Menu for Sidebar Toggle */
+        .menu-toggle {
+          display: block;
+          position: fixed;
+          top: 15px;
+          left: 15px;
+          z-index: 1002; /* Above sidebar */
+          background: var(--primary-color);
+          color: white;
+          border: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          font-size: 1.2rem;
+          cursor: pointer;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .main-content {
+          padding: 1rem;
+        }
+        .profile-img {
+          width: 100px;
+          height: 100px;
+        }
+        .name {
+          font-size: 1.2rem;
+        }
+        .section-title {
+          font-size: 1.5rem;
+        }
+        .form-control {
+          padding: 0.7rem;
+          font-size: 0.9rem;
+        }
+        .submit-btn {
+          padding: 0.7rem 1.2rem;
+          font-size: 0.9rem;
+        }
+        .badge {
+          padding: 0.6rem 1rem;
+          font-size: 0.9rem;
+        }
+        .badge i {
+          font-size: 1.2rem;
+        }
+        .certification-card {
+            padding: 1rem;
+        }
+        .timeline-content {
+            padding: 15px;
+        }
+      }
+/* Dark Mode Responsive Adjustments */
+      body.dark-mode .sidebar {
+        background-color: #1e2a38; /* Darker sidebar for dark mode */
+        border-right: 1px solid #34495e;
+      }
+      body.dark-mode .nav-item:hover,
+      body.dark-mode .nav-item.active {
+        background-color: #3498db; /* Keep accent for active/hover */
+      }
+      body.dark-mode .menu-toggle {
+        background: #1e2a38;
+        color: var(--light-color);
+      }
+      body.dark-mode .main-content {
+        background-color: #2c3e50; /* Dark background for main content */
+        color: var(--light-color);
+      }
+      body.dark-mode .section-title {
+        color: var(--secondary-color); /* Brighter title for dark mode */
+      }
+      body.dark-mode .section-title::after {
+        background-color: var(--light-color);
+      }
+      body.dark-mode .badge {
+        background-color: #34495e;
+        color: var(--light-color);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      }
+      body.dark-mode .badge i {
+        color: var(--secondary-color);
+      }
+      body.dark-mode .timeline-content {
+        background-color: #34495e;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      }
+      body.dark-mode .timeline-date {
+        color: var(--secondary-color);
+      }
+      body.dark-mode .certification-card {
+        background-color: #34495e;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      }
+      body.dark-mode .certification-card h3 {
+        color: var(--secondary-color);
+      }
+      body.dark-mode .certification-card a {
+        color: var(--light-color);
+      }
+      body.dark-mode .form-control {
+        background-color: #34495e;
+        border-color: #4a6572;
+        color: var(--light-color);
+      }
+      body.dark-mode .form-control:focus {
+        border-color: var(--secondary-color);
+        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+      }
+      body.dark-mode .form-group label {
+        color: var(--light-color);
+      }
+      body.dark-mode #resumeContent {
+        color: var(--light-color); /* Ensure resume text is readable */
+      }
+      body.dark-mode .resume-header {
+        border-bottom-color: var(--secondary-color);
+      }
+      body.dark-mode .resume-name, body.dark-mode .resume-section h3 {
+        color: var(--secondary-color);
+      }
+      body.dark-mode .resume-title {
+        color: #bdc3c7;
+      }
+      body.dark-mode .resume-section h4 {
+        color: var(--light-color);
+      }
+      body.dark-mode .resume-section {
+        page-break-inside: avoid; /* Redundant but safe */
+      }
+      body.dark-mode .resume-section ul li {
+         color: var(--light-color);
+      }
     </style>
   </head>
   <body>
+<button class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
     <button class="theme-toggle" id="themeToggle">
       <i class="fas fa-moon"></i>
     </button>
@@ -1084,9 +1358,11 @@
                 <p class="resume-title">
                   Junior Information System Officer II | MSc Student in Data Science
                 </p>
-                <p class="resume-contact">
-                  Email: gurmud5@gmail.com | Phone: +251-9-26-10-83-20 | Location: Addis Ababa, Ethiopia
-                </p>
+                <div class="resume-contact">
+                  <p><i class="fas fa-envelope"></i>gurmud5@gmail.com</p>
+                  <p><i class="fas fa-phone"></i>+251-9-26-10-83-20</p>
+                  <p><i class="fas fa-map-marker-alt"></i>Addis Ababa, Ethiopia</p>
+                </div>
               </div>
             </div>
 
@@ -1102,11 +1378,8 @@
                 <div class="resume-section">
                   <h3>Professional Experience</h3>
 
-                  <h4>Commercial Bank of Ethiopia</h4>
-                  <p>
-                    <strong>Junior Information System Officer II</strong><br />
-                    Jan 2024 - Present
-                  </p>
+                  <h4>Junior Information System Officer II</h4>
+                  <p class="date-location">Commercial Bank of Ethiopia | Jan 2024 - Present</p>
                   <ul>
                     <li>Lead data management transformation initiatives</li>
                     <li>Develop data governance policies bank-wide</li>
@@ -1114,10 +1387,8 @@
                     <li>Optimize core banking systems</li>
                   </ul>
 
-                  <p>
-                    <strong>Junior Information System Officer I</strong><br />
-                    Jul 2023 - Jan 2024
-                  </p>
+                  <h4>Junior Information System Officer I</h4>
+                  <p class="date-location">Commercial Bank of Ethiopia | Jul 2023 - Jan 2024</p>
                   <ul>
                     <li>Assisted in system upgrades for 1800+ branches</li>
                     <li>Developed training materials</li>
@@ -1127,17 +1398,11 @@
 
                 <div class="resume-section">
                   <h3>Education</h3>
-                  <p>
-                    <strong>MSc in Computer Science (Data Science)</strong><br />
-                    American College of Technology<br />
-                    2024 - Present
-                  </p>
+                  <h4>MSc in Computer Science (Data Science)</h4>
+                  <p class="date-location">American College of Technology | 2024 - Present</p>
 
-                  <p>
-                    <strong>BSc in Computer Science</strong><br />
-                    Gambella University<br />
-                    2018 - 2022
-                  </p>
+                  <h4>BSc in Computer Science</h4>
+                  <p class="date-location">Gambella University | 2018 - 2022</p>
                 </div>
               </div>
 
@@ -1291,21 +1556,23 @@
             scrollY: 0,
             onclone: function(clonedDoc) {
               // Force styles for PDF
-              clonedDoc.body.style.fontSize = '11px';
-              clonedDoc.body.style.lineHeight = '1.3';
+              clonedDoc.body.style.fontFamily = "'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"; // Ensure font is applied
+              clonedDoc.body.style.fontSize = '11pt'; // Match new CSS
+              clonedDoc.body.style.lineHeight = '1.5'; // Match new CSS
+              clonedDoc.body.style.color = '#444'; // Match new CSS
               
               // Ensure photo is properly sized
               const clonedPhoto = clonedDoc.querySelector(".resume-photo");
               if (clonedPhoto) {
-                clonedPhoto.style.width = '70px';
-                clonedPhoto.style.height = '70px';
+                clonedPhoto.style.width = '100px'; // Match new CSS
+                clonedPhoto.style.height = '100px'; // Match new CSS
                 clonedPhoto.style.objectFit = 'cover';
               }
               
               // Adjust spacing for PDF
               const sections = clonedDoc.querySelectorAll(".resume-section");
               sections.forEach(section => {
-                section.style.marginBottom = '8px';
+                section.style.marginBottom = '15px'; // Adjusted for better PDF spacing
               });
             }
           },
@@ -1395,6 +1662,33 @@
         if (localStorage.getItem("darkMode") === "enabled") {
           document.body.classList.add("dark-mode");
           document.querySelector("#themeToggle i").classList.replace("fa-moon", "fa-sun");
+        }
+// Mobile Menu Toggle
+        const menuToggle = document.getElementById("menuToggle");
+        const sidebar = document.querySelector(".sidebar");
+
+        if (menuToggle && sidebar) {
+          menuToggle.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+          });
+
+          // Close sidebar when a nav item is clicked (for mobile)
+          document.querySelectorAll(".sidebar .nav-item").forEach(item => {
+            item.addEventListener("click", () => {
+              if (sidebar.classList.contains("open")) {
+                sidebar.classList.remove("open");
+              }
+            });
+          });
+
+          // Close sidebar if user clicks outside of it
+          document.addEventListener('click', function(event) {
+            const isClickInsideSidebar = sidebar.contains(event.target);
+            const isClickOnMenuToggle = menuToggle.contains(event.target);
+            if (!isClickInsideSidebar && !isClickOnMenuToggle && sidebar.classList.contains('open')) {
+              sidebar.classList.remove('open');
+            }
+          });
         }
       });
     </script>

@@ -10,10 +10,11 @@
     <meta name="description" content="Gurmu Demuma's Professional Portfolio - Banking IT Specialist and Data Science Student" />
     <meta name="keywords" content="banking IT, data management, computer science, portfolio, CBE, data science" />
     <meta property="og:title" content="Gurmu Demuma, B.Sc. | Professional Portfolio" />
-    <meta property="og:image" content="image/Portfolio.jpg" />
+    <meta property="og:image" content="https://gurmudemuma.github.io/image/Portfolio.jpg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V7Q26XTD8V"></script>
+    <!-- Version: 1777046157 -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -22,6 +23,7 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
+      /* Professional Dark Mode Color Palette */
       :root {
         --primary-color: #2c3e50;
         --secondary-color: #3498db;
@@ -30,6 +32,18 @@
         --dark-color: #2c3e50;
         --text-color: #333;
         --text-light: #7f8c8d;
+        
+        /* Dark Mode Professional Colors */
+        --dark-bg-primary: #0f172a;
+        --dark-bg-secondary: #1e293b;
+        --dark-bg-tertiary: #334155;
+        --dark-text-primary: #f8fafc;
+        --dark-text-secondary: #cbd5e1;
+        --dark-text-muted: #94a3b8;
+        --dark-accent-blue: #3b82f6;
+        --dark-accent-emerald: #10b981;
+        --dark-accent-amber: #f59e0b;
+        --dark-border: #475569;
       }
 
       * {
@@ -63,6 +77,8 @@
       .profile {
         text-align: center;
         margin-bottom: 2rem;
+        position: relative;
+        z-index: 1;
       }
 
       .profile-img {
@@ -172,33 +188,976 @@
         line-height: 1.8;
       }
 
-      .badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-top: 2rem;
+      /* Section Lead Text */
+      .section-lead {
+        font-size: 1.2rem;
+        color: var(--text-light);
+        margin-bottom: 2.5rem;
+        line-height: 1.6;
+        max-width: 800px;
       }
 
-      .badge {
+      /* Experience Section Styles */
+      .experience-intro, .education-intro, .skills-intro {
+        margin-bottom: 3rem;
+      }
+
+      .experience-timeline {
+        max-width: 900px;
+      }
+
+      .experience-item {
         background-color: var(--light-color);
-        color: var(--dark-color);
-        padding: 1rem 1.5rem;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-left: 4px solid var(--secondary-color);
         transition: all 0.3s ease;
       }
 
-      .badge:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      .experience-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
       }
 
-      .badge i {
-        font-size: 1.5rem;
-        margin-right: 10px;
+      .experience-item.current {
+        border-left-color: var(--accent-color);
+        background: linear-gradient(135deg, var(--light-color) 0%, #f8f9fa 100%);
+      }
+
+      .experience-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .experience-period {
+        font-size: 0.9rem;
+        color: var(--text-light);
+        font-weight: 500;
+      }
+
+      .experience-badge {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      .experience-badge.current-role {
+        background-color: var(--accent-color);
+      }
+
+      .experience-title {
+        font-size: 1.4rem;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .experience-company {
         color: var(--secondary-color);
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+      }
+
+      .experience-highlights {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .highlight-metric {
+        text-align: center;
+        padding: 1rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .metric-number {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--secondary-color);
+      }
+
+      .metric-label {
+        font-size: 0.8rem;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .experience-content h5 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+
+      .achievement-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .achievement-list li {
+        margin-bottom: 0.8rem;
+        padding-left: 1.5rem;
+        position: relative;
+        line-height: 1.6;
+      }
+
+      .achievement-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--secondary-color);
+        font-weight: bold;
+      }
+
+      .career-progression {
+        background-color: var(--light-color);
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: 2rem;
+      }
+
+      .career-progression h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      /* Education Section Styles */
+      .education-grid {
+        display: grid;
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .education-item {
+        background-color: var(--light-color);
+        border-radius: 12px;
+        padding: 2rem;
+        position: relative;
+        border-left: 4px solid var(--secondary-color);
+      }
+
+      .education-item.current-study {
+        border-left-color: var(--accent-color);
+      }
+
+      .education-status {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      .education-status.completed {
+        background-color: var(--text-light);
+      }
+
+      .education-item h3 {
+        color: var(--primary-color);
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .education-item h4 {
+        color: var(--secondary-color);
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+      }
+
+      .education-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+        color: var(--text-light);
+      }
+
+      .focus-areas, .coursework {
+        margin-top: 1.5rem;
+      }
+
+      .focus-areas h5, .coursework h5 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+
+      .focus-tags, .coursework-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .focus-tag, .tech-tag {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      .coursework-list span {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+      }
+
+      .capstone-project {
+        background-color: var(--light-color);
+        padding: 2rem;
+        border-radius: 12px;
+      }
+
+      .capstone-project h3 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+      }
+
+      .project-card {
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .project-card h4 {
+        color: var(--secondary-color);
+        margin-bottom: 1rem;
+      }
+
+      .project-description {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+      }
+
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      /* Skills Section Styles */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .skill-category {
+        background-color: var(--light-color);
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+      }
+
+      .skill-category:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .category-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .category-icon {
+        width: 50px;
+        height: 50px;
+        background-color: var(--secondary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+      }
+
+      .category-icon i {
+        font-size: 1.3rem;
+        color: white;
+      }
+
+      .category-header h3 {
+        color: var(--primary-color);
+        font-size: 1.2rem;
+      }
+
+      .skills-list {
+        space-y: 1rem;
+      }
+
+      .skill-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .skill-name {
+        font-weight: 500;
+        color: var(--text-color);
+      }
+
+      .skill-level {
+        width: 80px;
+        height: 6px;
+        background-color: #e0e0e0;
+        border-radius: 3px;
+        position: relative;
+      }
+
+      .skill-level::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        border-radius: 3px;
+        background-color: var(--secondary-color);
+      }
+
+      .skill-level.expert::after {
+        width: 90%;
+      }
+
+      .skill-level.advanced::after {
+        width: 75%;
+      }
+
+      .skill-level.intermediate::after {
+        width: 60%;
+      }
+
+      .tools-section {
+        background-color: var(--light-color);
+        padding: 2rem;
+        border-radius: 12px;
+      }
+
+      .tools-section h3 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+      }
+
+      .tool-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        background-color: white;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .tool-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .tool-item i {
+        font-size: 2rem;
+        color: var(--secondary-color);
+        margin-bottom: 0.5rem;
+      }
+
+      /* Certifications Section Styles */
+      .certifications-intro {
+        margin-bottom: 3rem;
+      }
+
+      .certifications-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .certification-card {
+        background-color: var(--light-color);
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        position: relative;
+        border-left: 4px solid var(--secondary-color);
+      }
+
+      .certification-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .certification-card.featured {
+        border-left-color: var(--accent-color);
+        background: linear-gradient(135deg, var(--light-color) 0%, #f8f9fa 100%);
+      }
+
+      .cert-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .cert-icon {
+        width: 50px;
+        height: 50px;
+        background-color: var(--secondary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .cert-icon i {
+        font-size: 1.3rem;
+        color: white;
+      }
+
+      .cert-badge {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      .cert-badge.featured {
+        background-color: var(--accent-color);
+      }
+
+      .certification-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        line-height: 1.4;
+      }
+
+      .certification-card h3 a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .certification-card h3 a:hover {
+        color: var(--secondary-color);
+      }
+
+      .cert-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: var(--text-light);
+      }
+
+      .cert-provider {
+        font-weight: 500;
+      }
+
+      .cert-year {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 0.2rem 0.6rem;
+        border-radius: 10px;
+        font-size: 0.8rem;
+      }
+
+      .cert-description {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+        color: var(--text-color);
+      }
+
+      .cert-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .skill-badge {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      .certification-note {
+        background-color: var(--light-color);
+        border-radius: 8px;
+        padding: 1.5rem;
+        border-left: 4px solid var(--secondary-color);
+      }
+
+      .note-content {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .note-content i {
+        color: var(--secondary-color);
+        font-size: 1.2rem;
+      }
+
+      /* Contact Section Styles */
+      .contact-intro {
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .contact-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .contact-form-section h3 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+      }
+
+      .contact-form {
+        background-color: var(--light-color);
+        padding: 2rem;
+        border-radius: 12px;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        font-family: inherit;
+      }
+
+      .form-control:focus {
+        border-color: var(--secondary-color);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+      }
+
+      select.form-control {
+        cursor: pointer;
+      }
+
+      textarea.form-control {
+        resize: vertical;
+        font-family: inherit;
+      }
+
+      .submit-btn {
+        background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+      }
+
+      .contact-card, .social-card, .availability-card {
+        background-color: var(--light-color);
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-card h3, .social-card h3, .availability-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+      }
+
+      .contact-methods, .social-methods {
+        space-y: 1rem;
+      }
+
+      .contact-method, .social-method {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background-color: white;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .contact-method:hover, .social-method:hover {
+        transform: translateX(5px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-icon, .social-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+
+      .contact-icon {
+        background-color: var(--secondary-color);
+      }
+
+      .social-icon.linkedin {
+        background-color: #0077b5;
+      }
+
+      .social-icon.github {
+        background-color: #333;
+      }
+
+      .contact-details, .social-details {
+        flex: 1;
+      }
+
+      .contact-label, .social-label {
+        display: block;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 0.2rem;
+      }
+
+      .contact-value, .social-value {
+        color: var(--text-light);
+        text-decoration: none;
+      }
+
+      .contact-value:hover {
+        color: var(--secondary-color);
+      }
+
+      .availability-status {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .status-indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #28a745;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% { opacity: 1; }
+        50% { opacity: 0.5; }
+        100% { opacity: 1; }
+      }
+
+      .availability-note {
+        color: var(--text-light);
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .response-time {
+        text-align: center;
+        padding: 1.5rem;
+        background-color: var(--light-color);
+        border-radius: 8px;
+      }
+
+      .response-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        color: var(--text-light);
+        font-style: italic;
+      }
+
+      .response-info i {
+        color: var(--secondary-color);
+      }
+      .hero-section {
+        text-align: center;
+        padding: 4rem 0;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        color: var(--secondary-color);
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+      }
+
+      .hero-description {
+        font-size: 1.2rem;
+        color: var(--text-light);
+        margin-bottom: 2.5rem;
+        line-height: 1.6;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .cta-primary, .cta-secondary {
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .cta-primary {
+        background-color: var(--secondary-color);
+        color: white;
+      }
+
+      .cta-primary:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-2px);
+      }
+
+      .cta-secondary {
+        background-color: transparent;
+        color: var(--secondary-color);
+        border: 2px solid var(--secondary-color);
+      }
+
+      .cta-secondary:hover {
+        background-color: var(--secondary-color);
+        color: white;
+      }
+
+      /* Value Propositions */
+      .value-props {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+
+      .value-prop {
+        text-align: center;
+        padding: 2rem;
+        background-color: var(--light-color);
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .value-prop:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .value-icon {
+        width: 80px;
+        height: 80px;
+        background-color: var(--secondary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+      }
+
+      .value-icon i {
+        font-size: 2rem;
+        color: white;
+      }
+
+      .value-prop h3 {
+        font-size: 1.3rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .value-prop p {
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+
+      /* About Section Styles */
+      .about-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+        margin-top: 2rem;
+      }
+
+      .about-lead {
+        font-size: 1.3rem;
+        color: var(--primary-color);
+        font-weight: 500;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+
+      .about-story, .about-approach {
+        margin-bottom: 2rem;
+      }
+
+      .about-story h3, .about-approach h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .about-approach ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .about-approach li {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+
+      .about-approach li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--secondary-color);
+        font-weight: bold;
+      }
+
+      .quick-facts, .availability {
+        background-color: var(--light-color);
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+      }
+
+      .quick-facts h3, .availability h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+
+      .fact {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .fact:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .fact-label {
+        font-weight: 600;
+        color: var(--text-color);
+      }
+
+      .fact-value {
+        color: var(--text-light);
+        text-align: right;
+      }
+
+      .contact-cta {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .contact-cta:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-2px);
       }
 
       .timeline {
@@ -286,34 +1245,37 @@
       /* Modern Resume Styles */
       #resumeContent {
         width: 100%;
-        max-width: 800px; /* A4-like width */
-        margin: 20px auto; /* Add some margin for the on-page view */
+        max-width: 800px;
+        margin: 20px auto;
         font-family: 'Lato', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 11pt; /* Standard resume font size */
-        line-height: 1.5;
-        color: #444; /* Slightly softer text color */
-        background-color: #fff; /* Ensure white background for PDF */
-        padding: 30px; /* Add padding for on-page view */
-        box-shadow: 0 0 15px rgba(0,0,0,0.1); /* Subtle shadow for on-page view */
-        border-radius: 8px; /* Rounded corners for on-page view */
+        font-size: 10pt;
+        line-height: 1.4;
+        color: #444;
+        background-color: #fff;
+        padding: 30px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        border-radius: 8px;
       }
 
       .resume-header {
         display: flex;
-        align-items: flex-start; /* Align items to the top */
-        margin-bottom: 25px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #e0e0e0; /* Lighter border */
+        align-items: flex-start;
+        margin-bottom: 18px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #e0e0e0;
       }
 
       .resume-photo {
-        width: 100px; /* Slightly larger photo */
-        height: 100px;
+        width: 85px !important;
+        height: 85px !important;
         border-radius: 50%;
         object-fit: cover;
-        border: 4px solid var(--secondary-color);
-        margin-right: 25px;
+        border: 3px solid var(--secondary-color);
+        margin-right: 20px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        display: block !important;
+        flex-shrink: 0;
+        opacity: 1;
       }
 
       .resume-header-text {
@@ -321,99 +1283,94 @@
       }
 
       .resume-name {
-        font-size: 26pt; /* Larger name */
-        margin: 0 0 5px 0;
+        font-size: 22pt;
+        margin: 0 0 3px 0;
         color: var(--primary-color);
         font-weight: 700;
         letter-spacing: -0.5px;
       }
 
       .resume-title {
-        font-size: 13pt;
-        margin: 0 0 10px 0;
-        color: var(--secondary-color); /* Use accent color for title */
+        font-size: 10.5pt;
+        margin: 0 0 8px 0;
+        color: var(--secondary-color);
         font-weight: 400;
+        line-height: 1.3;
       }
 
       .resume-contact {
-        font-size: 10pt;
+        font-size: 9pt;
         color: #555;
-        line-height: 1.6;
+        line-height: 1.4;
       }
       .resume-contact p {
-        margin: 2px 0;
+        margin: 1px 0;
         display: flex;
         align-items: center;
       }
       .resume-contact i {
-        margin-right: 8px;
+        margin-right: 6px;
         color: var(--secondary-color);
-        width: 16px; /* Ensure icon alignment */
+        width: 14px;
         text-align: center;
       }
 
       .resume-section {
-        margin-bottom: 20px;
+        margin-bottom: 12px;
         page-break-inside: avoid;
       }
 
-      .resume-section h3 { /* Section Titles */
-        font-size: 14pt;
-        margin-bottom: 10px;
+      .resume-section h3 {
+        font-size: 12pt;
+        margin-bottom: 8px;
         color: var(--primary-color);
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        padding-bottom: 5px;
+        padding-bottom: 3px;
         border-bottom: 2px solid var(--secondary-color);
-        display: inline-block; /* To make border only as long as text */
+        display: inline-block;
       }
 
-      .resume-section h4 { /* Job Titles / Degree Names */
-        font-size: 12pt;
+      .resume-section h4 {
+        font-size: 10pt;
         margin: 0 0 2px 0;
         font-weight: 700;
         color: #333;
       }
       
-      .resume-section .date-location { /* For dates and locations */
-        font-size: 10pt;
+      .resume-section .date-location {
+        font-size: 9pt;
         color: #777;
-        margin-bottom: 5px;
+        margin-bottom: 4px;
         font-style: italic;
       }
 
       .resume-section p, .resume-section ul {
-        margin: 0 0 10px 0;
-        font-size: 10.5pt;
+        margin: 0 0 8px 0;
+        font-size: 9.5pt;
         color: #555;
       }
 
       .resume-section ul {
-        padding-left: 20px; /* Standard bullet indentation */
-        list-style-type: disc; /* Or square, or none with custom bullets */
+        padding-left: 18px;
+        list-style-type: disc;
       }
 
       .resume-section li {
-        margin-bottom: 5px;
-        line-height: 1.6;
+        margin-bottom: 3px;
+        line-height: 1.4;
       }
 
       .resume-two-column {
         display: flex;
-        flex-wrap: nowrap; /* Prevent wrapping to ensure two columns */
-        gap: 30px; /* Space between columns */
+        flex-wrap: nowrap;
+        gap: 24px;
       }
 
       .resume-column {
         flex: 1;
-        min-width: 0; /* Allow columns to shrink */
-      }
-      .resume-column:first-child {
-         /* flex-basis: 60%; /* Example: give more space to one column */
-      }
-      .resume-column:last-child {
-         /* flex-basis: 40%; */
+        min-width: 0;
       }
 
       .contact-form {
@@ -548,31 +1505,100 @@
         background: var(--secondary-color);
       }
 
-      body.dark-mode .theme-toggle {
-        background: #333;
-        color: #bb86fc;
+      /* Mobile Menu Toggle - Always visible and functional */
+      .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 1003;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .menu-toggle:hover {
+        background: var(--secondary-color);
+        transform: scale(1.1);
+      }
+
+      /* Sidebar collapse functionality for all screen sizes */
+      .sidebar {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 2rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+      }
+
+      .sidebar.collapsed {
+        width: 60px;
+        padding: 1rem 0.5rem;
+      }
+
+      .sidebar.collapsed .profile {
+        text-align: center;
+      }
+
+      .sidebar.collapsed .profile-img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0.5rem;
+      }
+
+      .sidebar.collapsed .name,
+      .sidebar.collapsed .title {
+        display: none;
+      }
+
+      .sidebar.collapsed .nav-item {
+        padding: 0.8rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .sidebar.collapsed .nav-item span {
+        display: none;
+      }
+
+      .sidebar.collapsed .social-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      /* Adjust main content when sidebar is collapsed */
+      .container {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        min-height: 100vh;
+        transition: all 0.3s ease;
+      }
+
+      .container.sidebar-collapsed {
+        grid-template-columns: 60px 1fr;
+      }
+
+      /* Show menu toggle on mobile */
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
       }
 
       @media (max-width: 1024px) {
         .container {
-          grid-template-columns: 250px 1fr;
+          grid-template-columns: 250px 1fr; /* Slightly smaller sidebar */
         }
-        
         .main-content {
           padding: 2rem;
-        }
-        
-        .profile-img {
-          width: 120px;
-          height: 120px;
-        }
-        
-        .name {
-          font-size: 1.3rem;
-        }
-        
-        .section-title {
-          font-size: 1.7rem;
         }
       }
 
@@ -582,8 +1608,20 @@
         }
 
         .sidebar {
-          text-align: center;
-          padding: 1.5rem;
+          position: fixed;
+          left: -100%;
+          top: 0;
+          width: 280px;
+          height: 100%;
+          z-index: 1001;
+          transition: left 0.3s ease;
+          overflow-y: auto;
+          padding: 4rem 2rem 2rem;
+        }
+
+        .sidebar.open {
+          left: 0;
+          box-shadow: 5px 0 15px rgba(0,0,0,0.2);
         }
 
         .profile-img {
@@ -591,21 +1629,42 @@
           height: 100px;
         }
 
-        .nav {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          margin-top: 1rem;
-        }
-
-        .nav-item {
-          margin: 0.3rem;
-          padding: 0.6rem 0.8rem;
-          font-size: 0.9rem;
-        }
-
         .main-content {
           padding: 1.5rem;
+        }
+
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .hero-description {
+          font-size: 1rem;
+        }
+
+        .hero-cta {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .cta-primary, .cta-secondary {
+          width: 100%;
+          max-width: 300px;
+          text-align: center;
+        }
+
+        .value-props {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          margin-top: 2rem;
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
         }
 
         .section-title {
@@ -645,16 +1704,40 @@
           margin-bottom: 15px;
         }
         
-        .badge {
-          flex: 1 1 100%;
-        }
-        
         .resume-two-column {
           flex-direction: column;
         }
-        
+
         .resume-column {
           min-width: 100%;
+        }
+
+        .experience-highlights {
+          grid-template-columns: 1fr;
+        }
+
+        .education-grid,
+        .skills-grid,
+        .certifications-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+
+        .tools-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .theme-toggle {
+            right: 15px;
+            top: 15px;
         }
       }
 
@@ -699,34 +1782,307 @@
         }
       }
 
+      /* Professional Dark Mode Theme */
       body.dark-mode {
-        background-color: #121212;
-        color: #e0e0e0;
+        background-color: var(--dark-bg-primary);
+        color: var(--dark-text-primary);
       }
 
       body.dark-mode .main-content {
-        background-color: #03192a;
-        color: #efefef;
+        background-color: var(--dark-bg-primary);
+        color: var(--dark-text-primary);
       }
 
+      body.dark-mode .sidebar {
+        background-color: var(--dark-bg-secondary);
+        border-right: 1px solid var(--dark-border);
+      }
+
+      body.dark-mode .nav-item:hover,
+      body.dark-mode .nav-item.active {
+        background-color: var(--dark-accent-blue);
+      }
+
+      body.dark-mode .theme-toggle {
+        background: var(--dark-bg-secondary);
+        color: var(--dark-text-primary);
+      }
+
+      body.dark-mode .menu-toggle {
+        background: var(--dark-bg-secondary);
+        color: var(--dark-text-primary);
+      }
+
+      body.dark-mode .menu-toggle:hover {
+        background: var(--dark-accent-blue);
+      }
+
+      /* Section Styles */
       body.dark-mode .section-title {
-        color: #bb86fc;
+        color: var(--dark-text-primary);
       }
 
-      body.dark-mode .badge {
-        background-color: #333;
-        color: #e0e0e0;
+      body.dark-mode .section-title::after {
+        background-color: var(--dark-accent-blue);
       }
 
+      body.dark-mode .section-lead {
+        color: var(--dark-text-secondary);
+      }
+
+      /* Cards and Components */
+      body.dark-mode .value-prop,
+      body.dark-mode .experience-item,
+      body.dark-mode .education-item,
+      body.dark-mode .skill-category,
+      body.dark-mode .tools-section,
+      body.dark-mode .certification-card,
+      body.dark-mode .certification-note,
+      body.dark-mode .capstone-project,
+      body.dark-mode .career-progression,
+      body.dark-mode .contact-form,
+      body.dark-mode .contact-card,
+      body.dark-mode .social-card,
+      body.dark-mode .availability-card,
+      body.dark-mode .response-time,
+      body.dark-mode .quick-facts,
+      body.dark-mode .availability {
+        background-color: var(--dark-bg-secondary);
+        border: 1px solid var(--dark-border);
+      }
+
+      /* Featured Certification Special Styling */
+      body.dark-mode .certification-card.featured {
+        background: linear-gradient(135deg, var(--dark-bg-secondary) 0%, #2d3748 100%);
+        border-left-color: var(--dark-accent-emerald);
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
+      }
+
+      body.dark-mode .experience-item.current {
+        background: linear-gradient(135deg, var(--dark-bg-secondary) 0%, #2d3748 100%);
+        border-left-color: var(--dark-accent-emerald);
+      }
+
+      body.dark-mode .education-item.current-study {
+        border-left-color: var(--dark-accent-emerald);
+      }
+
+      body.dark-mode .highlight-metric,
+      body.dark-mode .project-card,
+      body.dark-mode .tool-item,
+      body.dark-mode .contact-method,
+      body.dark-mode .social-method {
+        background-color: var(--dark-bg-tertiary);
+        border: 1px solid var(--dark-border);
+      }
+
+      /* Text Colors */
+      body.dark-mode .hero-title,
+      body.dark-mode .experience-title,
+      body.dark-mode .education-item h3,
+      body.dark-mode .category-header h3,
+      body.dark-mode .tools-section h3,
+      body.dark-mode .certification-card h3,
+      body.dark-mode .contact-form-section h3,
+      body.dark-mode .contact-card h3,
+      body.dark-mode .social-card h3,
+      body.dark-mode .availability-card h3,
+      body.dark-mode .capstone-project h3,
+      body.dark-mode .career-progression h3,
+      body.dark-mode .quick-facts h3,
+      body.dark-mode .availability h3,
+      body.dark-mode .skill-name,
+      body.dark-mode .contact-label,
+      body.dark-mode .social-label,
+      body.dark-mode .fact-label,
+      body.dark-mode .availability-status {
+        color: var(--dark-text-primary);
+      }
+
+      body.dark-mode .hero-subtitle,
+      body.dark-mode .about-lead,
+      body.dark-mode .experience-company,
+      body.dark-mode .education-item h4,
+      body.dark-mode .project-card h4,
+      body.dark-mode .metric-number {
+        color: var(--dark-accent-blue);
+      }
+
+      body.dark-mode .hero-description,
+      body.dark-mode .value-prop p,
+      body.dark-mode .cert-description,
+      body.dark-mode .contact-value,
+      body.dark-mode .social-value,
+      body.dark-mode .fact-value,
+      body.dark-mode .availability-note,
+      body.dark-mode .response-info {
+        color: var(--dark-text-secondary);
+      }
+
+      body.dark-mode .metric-label,
+      body.dark-mode .note-content p {
+        color: var(--dark-text-muted);
+      }
+
+      /* Interactive Elements */
+      body.dark-mode .cta-primary,
+      body.dark-mode .contact-cta,
+      body.dark-mode .submit-btn {
+        background-color: var(--dark-accent-blue);
+      }
+
+      body.dark-mode .cta-primary:hover,
+      body.dark-mode .contact-cta:hover,
+      body.dark-mode .submit-btn:hover {
+        background-color: #2563eb;
+      }
+
+      body.dark-mode .cta-secondary {
+        color: var(--dark-accent-blue);
+        border-color: var(--dark-accent-blue);
+      }
+
+      body.dark-mode .cta-secondary:hover {
+        background-color: var(--dark-accent-blue);
+      }
+
+      /* Form Elements */
       body.dark-mode .form-control {
-        background-color: #333;
-        border-color: #444;
-        color: #e0e0e0;
+        background-color: var(--dark-bg-tertiary);
+        border-color: var(--dark-border);
+        color: var(--dark-text-primary);
       }
 
+      body.dark-mode .form-control:focus {
+        border-color: var(--dark-accent-blue);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      }
+
+      body.dark-mode .form-group label {
+        color: var(--dark-text-primary);
+      }
+
+      /* Icons and Badges */
+      body.dark-mode .value-icon,
+      body.dark-mode .category-icon,
+      body.dark-mode .cert-icon,
+      body.dark-mode .contact-icon {
+        background-color: var(--dark-accent-blue);
+      }
+
+      body.dark-mode .experience-badge,
+      body.dark-mode .cert-badge {
+        background-color: var(--dark-accent-blue);
+      }
+
+      body.dark-mode .experience-badge.current-role,
+      body.dark-mode .cert-badge.featured {
+        background-color: var(--dark-accent-emerald);
+      }
+
+      body.dark-mode .cert-year {
+        background-color: var(--dark-accent-amber);
+        color: var(--dark-bg-primary);
+      }
+
+      body.dark-mode .skill-badge,
+      body.dark-mode .focus-tag,
+      body.dark-mode .tech-tag {
+        background-color: var(--dark-accent-blue);
+      }
+
+      body.dark-mode .coursework-list span {
+        background-color: var(--dark-accent-emerald);
+      }
+
+      /* Skill Levels */
+      body.dark-mode .skill-level {
+        background-color: var(--dark-border);
+      }
+
+      body.dark-mode .skill-level::after {
+        background-color: var(--dark-accent-blue);
+      }
+
+      body.dark-mode .skill-item {
+        border-bottom-color: var(--dark-border);
+      }
+
+      /* Resume Section */
+      body.dark-mode #resumeContent {
+        background-color: var(--dark-bg-secondary);
+        color: var(--dark-text-primary);
+        box-shadow: 0 0 25px rgba(0,0,0,0.6);
+      }
+
+      body.dark-mode .resume-header {
+        border-bottom-color: var(--dark-border);
+      }
+
+      body.dark-mode .resume-name {
+        color: var(--dark-text-primary);
+      }
+
+      body.dark-mode .resume-section h3 {
+        color: var(--dark-accent-blue);
+      }
+
+      body.dark-mode .resume-title {
+        color: var(--dark-accent-blue);
+      }
+
+      body.dark-mode .resume-section h4 {
+        color: var(--dark-text-primary);
+      }
+
+      body.dark-mode .resume-section p, 
+      body.dark-mode .resume-section ul, 
+      body.dark-mode .resume-section li {
+        color: var(--dark-text-secondary);
+      }
+
+      body.dark-mode .resume-contact {
+        color: var(--dark-text-primary);
+      }
+
+      body.dark-mode .date-location {
+        color: var(--dark-text-muted);
+      }
+
+      body.dark-mode .resume-contact i,
+      body.dark-mode .note-content i,
+      body.dark-mode .response-info i {
+        color: var(--dark-accent-blue);
+      }
+
+      body.dark-mode .resume-section h3::after {
+        background-color: var(--dark-accent-blue);
+      }
+
+      body.dark-mode .resume-photo {
+        border-color: var(--dark-accent-blue);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+      }
+
+      /* Timeline */
       body.dark-mode .timeline-content {
-        background-color: #333;
-        color: #e0e0e0;
+        background-color: var(--dark-bg-secondary);
+        color: var(--dark-text-primary);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        border: 1px solid var(--dark-border);
+      }
+
+      body.dark-mode .timeline-date {
+        color: var(--dark-accent-blue);
+      }
+
+      /* Hover Effects */
+      body.dark-mode .contact-value:hover {
+        color: var(--dark-accent-blue);
+      }
+
+      body.dark-mode .certification-card h3 a:hover {
+        color: var(--dark-accent-blue);
       }
 
       /* Print-specific improvements */
@@ -883,22 +2239,7 @@
             top: 15px;
         }
 
-        /* Hamburger Menu for Sidebar Toggle */
-        .menu-toggle {
-          display: block;
-          position: fixed;
-          top: 15px;
-          left: 15px;
-          z-index: 1002; /* Above sidebar */
-          background: var(--primary-color);
-          color: white;
-          border: none;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          font-size: 1.2rem;
-          cursor: pointer;
-        }
+
       }
 
       @media (max-width: 480px) {
@@ -997,26 +2338,88 @@
       body.dark-mode .form-group label {
         color: var(--light-color);
       }
-      body.dark-mode #resumeContent {
-        color: var(--light-color); /* Ensure resume text is readable */
+
+      /* Dark Mode Styles for New Components */
+      body.dark-mode .experience-item,
+      body.dark-mode .education-item,
+      body.dark-mode .skill-category,
+      body.dark-mode .tools-section,
+      body.dark-mode .certification-card,
+      body.dark-mode .certification-note,
+      body.dark-mode .capstone-project,
+      body.dark-mode .career-progression,
+      body.dark-mode .contact-form,
+      body.dark-mode .contact-card,
+      body.dark-mode .social-card,
+      body.dark-mode .availability-card,
+      body.dark-mode .response-time {
+        background-color: #374151;
       }
-      body.dark-mode .resume-header {
-        border-bottom-color: var(--secondary-color);
+
+      body.dark-mode .highlight-metric,
+      body.dark-mode .project-card,
+      body.dark-mode .tool-item,
+      body.dark-mode .contact-method,
+      body.dark-mode .social-method {
+        background-color: #4b5563;
       }
-      body.dark-mode .resume-name, body.dark-mode .resume-section h3 {
-        color: var(--secondary-color);
+
+      body.dark-mode .experience-title,
+      body.dark-mode .education-item h3,
+      body.dark-mode .category-header h3,
+      body.dark-mode .tools-section h3,
+      body.dark-mode .certification-card h3,
+      body.dark-mode .contact-form-section h3,
+      body.dark-mode .contact-card h3,
+      body.dark-mode .social-card h3,
+      body.dark-mode .availability-card h3,
+      body.dark-mode .capstone-project h3,
+      body.dark-mode .career-progression h3 {
+        color: #34d399;
       }
-      body.dark-mode .resume-title {
-        color: #bdc3c7;
+
+      body.dark-mode .experience-company,
+      body.dark-mode .education-item h4,
+      body.dark-mode .project-card h4 {
+        color: #60a5fa;
       }
-      body.dark-mode .resume-section h4 {
-        color: var(--light-color);
+
+      body.dark-mode .experience-content h5,
+      body.dark-mode .focus-areas h5,
+      body.dark-mode .coursework h5 {
+        color: #fbbf24;
       }
-      body.dark-mode .resume-section {
-        page-break-inside: avoid; /* Redundant but safe */
+
+      body.dark-mode .metric-number {
+        color: #60a5fa;
       }
-      body.dark-mode .resume-section ul li {
-         color: var(--light-color);
+
+      body.dark-mode .contact-label,
+      body.dark-mode .social-label {
+        color: #34d399;
+      }
+
+      body.dark-mode .form-control {
+        background-color: #4b5563;
+        border-color: #6b7280;
+        color: #e5e7eb;
+      }
+
+      body.dark-mode .form-control:focus {
+        border-color: #60a5fa;
+        box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+      }
+
+      body.dark-mode .form-group label {
+        color: #34d399;
+      }
+
+      body.dark-mode .submit-btn {
+        background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+      }
+
+      body.dark-mode .contact-cta:hover {
+        background-color: #3b82f6;
       }
     </style>
   </head>
@@ -1031,14 +2434,14 @@
       <div class="sidebar">
         <div class="profile">
           <img
-            src="image/Portfolio.jpg"
+            src="https://gurmudemuma.github.io/image/Portfolio.jpg"
             alt="Gurmu Demuma - Profile Picture"
             class="profile-img"
             id="profileImage"
           />
-          <h1 class="name">Gurmu Demuma, B.Sc.</h1>
+          <h1 class="name">Gurmu Demuma</h1>
           <p class="title">
-            Junior Information System Officer II | MSc Student
+            Junior IS Officer III at Commercial Bank of Ethiopia | MSc Student
           </p>
           <input
             type="file"
@@ -1049,14 +2452,14 @@
         </div>
 
         <div class="nav">
-          <a href="#" class="nav-item active" data-section="home"><i class="fas fa-home"></i> Home</a>
-          <a href="#" class="nav-item" data-section="about"><i class="fas fa-user"></i> About</a>
-          <a href="#" class="nav-item" data-section="experience"><i class="fas fa-briefcase"></i> Experience</a>
-          <a href="#" class="nav-item" data-section="education"><i class="fas fa-graduation-cap"></i> Education</a>
-          <a href="#" class="nav-item" data-section="skills"><i class="fas fa-code"></i> Skills</a>
-          <a href="#" class="nav-item" data-section="certifications"><i class="fas fa-certificate"></i> Certifications</a>
-          <a href="#" class="nav-item" data-section="resume"><i class="fas fa-file-alt"></i> Resume</a>
-          <a href="#" class="nav-item" data-section="contact"><i class="fas fa-envelope"></i> Contact</a>
+          <a href="#" class="nav-item active" data-section="home"><i class="fas fa-home"></i> <span>Home</span></a>
+          <a href="#" class="nav-item" data-section="about"><i class="fas fa-user"></i> <span>About</span></a>
+          <a href="#" class="nav-item" data-section="experience"><i class="fas fa-briefcase"></i> <span>Experience</span></a>
+          <a href="#" class="nav-item" data-section="education"><i class="fas fa-graduation-cap"></i> <span>Education</span></a>
+          <a href="#" class="nav-item" data-section="skills"><i class="fas fa-code"></i> <span>Skills</span></a>
+          <a href="#" class="nav-item" data-section="certifications"><i class="fas fa-certificate"></i> <span>Certifications</span></a>
+          <a href="#" class="nav-item" data-section="resume"><i class="fas fa-file-alt"></i> <span>Resume</span></a>
+          <a href="#" class="nav-item" data-section="contact"><i class="fas fa-envelope"></i> <span>Contact</span></a>
         </div>
 
         <div class="social-links" style="margin-top: auto">
@@ -1067,300 +2470,598 @@
 
       <div class="main-content">
         <div class="section active" id="home">
-          <h2 class="section-title">Welcome</h2>
-          <p class="about-text">
-            I am Gurmu Demuma, currently pursuing a Master's degree in Computer
-            Science with a specialization in Data Science at American College of
-            Technology, while working as a Junior Information System Officer II
-            at Commercial Bank of Ethiopia (CBE). My academic journey
-            complements my professional experience in data management
-            transformation, creating a unique blend of theoretical knowledge and
-            practical banking IT expertise.
-          </p>
+          <div class="hero-section">
+            <h1 class="hero-title">Gurmu Demuma</h1>
+            <h2 class="hero-subtitle">Junior IS Officer III | Cyber Security Specialist</h2>
+            <p class="hero-description">
+              Bridging banking technology and cyber security through data-driven solutions at Ethiopia's largest financial institution while pursuing advanced cyber security expertise.
+            </p>
+            <div class="hero-cta">
+              <a href="#" class="cta-primary" data-section="contact">Get In Touch</a>
+              <a href="#" class="cta-secondary" data-section="about">Read More</a>
+            </div>
+          </div>
 
-          <div class="badges">
-            <div class="badge">
-              <i class="fas fa-building"></i>
-              <div>
-                <h3>Commercial Bank of Ethiopia</h3>
-                <p>Information Systems Officer</p>
+          <div class="value-props">
+            <div class="value-prop">
+              <div class="value-icon">
+                <i class="fas fa-shield-alt"></i>
               </div>
+              <h3>Cyber Security Focus</h3>
+              <p>Specializing in banking security frameworks and threat analysis</p>
             </div>
-            <div class="badge">
-              <i class="fas fa-graduation-cap"></i>
-              <div>
-                <h3>MSc Student</h3>
-                <p>Data Science</p>
+            <div class="value-prop">
+              <div class="value-icon">
+                <i class="fas fa-database"></i>
               </div>
+              <h3>Data Management</h3>
+              <p>Leading transformation initiatives across 1800+ bank branches</p>
             </div>
-            <div class="badge">
-              <i class="fas fa-certificate"></i>
-              <div>
-                <h3>5+</h3>
-                <p>Professional Certifications</p>
+            <div class="value-prop">
+              <div class="value-icon">
+                <i class="fas fa-graduation-cap"></i>
               </div>
+              <h3>Continuous Learning</h3>
+              <p>MSc in Cyber Security with multiple professional certifications</p>
             </div>
           </div>
         </div>
 
         <div class="section" id="about">
           <h2 class="section-title">About Me</h2>
-          <p class="about-text">
-            I am a dedicated banking IT professional and graduate student
-            specializing in Data Science at American College of Technology. My
-            dual focus allows me to bridge cutting-edge data science techniques
-            with practical banking applications. At Commercial Bank of Ethiopia,
-            I implement technology solutions that enhance operational efficiency
-            and data quality, while my academic studies keep me at the forefront
-            of data analytics innovation.
-          </p>
+          
+          <div class="about-content">
+            <div class="about-main">
+              <p class="about-lead">
+                I'm a banking IT professional specializing in cyber security, currently transforming data management systems at Commercial Bank of Ethiopia while pursuing advanced cyber security studies.
+              </p>
+              
+              <div class="about-story">
+                <h3>My Journey</h3>
+                <p>
+                  Starting as an IS trainee and rapidly advancing to Officer III within 18 months, I've led critical data transformation initiatives affecting over 1800 bank branches. My dual focus on practical banking applications and academic cyber security research allows me to bridge cutting-edge security frameworks with real-world financial systems.
+                </p>
+              </div>
 
-          <div class="resume-section">
-            <h3>Professional Focus</h3>
-            <ul>
-              <li>Data science applications in banking systems</li>
-              <li>Advanced analytics for financial decision-making</li>
-              <li>Data governance and quality management</li>
-              <li>Process automation through machine learning</li>
-              <li>Cross-functional collaboration between IT and business units</li>
-            </ul>
+              <div class="about-approach">
+                <h3>My Approach</h3>
+                <ul>
+                  <li><strong>Security-First Mindset:</strong> Every system design prioritizes data protection and threat mitigation</li>
+                  <li><strong>Data-Driven Decisions:</strong> Using analytics to optimize processes and reduce operational risks</li>
+                  <li><strong>Continuous Innovation:</strong> Staying current with emerging cyber security trends and banking technologies</li>
+                  <li><strong>Collaborative Leadership:</strong> Building cross-functional teams to implement complex technical solutions</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="about-sidebar">
+              <div class="quick-facts">
+                <h3>Quick Facts</h3>
+                <div class="fact">
+                  <span class="fact-label">Current Role:</span>
+                  <span class="fact-value">Junior IS Officer III</span>
+                </div>
+                <div class="fact">
+                  <span class="fact-label">Organization:</span>
+                  <span class="fact-value">Commercial Bank of Ethiopia</span>
+                </div>
+                <div class="fact">
+                  <span class="fact-label">Education:</span>
+                  <span class="fact-value">MSc Cyber Security (In Progress)</span>
+                </div>
+                <div class="fact">
+                  <span class="fact-label">Location:</span>
+                  <span class="fact-value">Addis Ababa, Ethiopia</span>
+                </div>
+              </div>
+
+              <div class="availability">
+                <h3>Availability</h3>
+                <p>Open to consulting opportunities and collaborative projects in banking security and data management.</p>
+                <a href="#" class="contact-cta" data-section="contact">Let's Connect</a>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="section" id="experience">
           <h2 class="section-title">Professional Experience</h2>
+          
+          <div class="experience-intro">
+            <p class="section-lead">
+              My career progression at Commercial Bank of Ethiopia demonstrates rapid advancement through technical excellence and leadership in critical data transformation initiatives.
+            </p>
+          </div>
 
-          <div class="timeline">
-            <div class="timeline-item left">
-              <div class="timeline-content">
-                <div class="timeline-date">Jan 2024 - Present</div>
-                <h3>Junior Information System Officer II</h3>
-                <h4>Commercial Bank of Ethiopia</h4>
-                <ul>
-                  <li>Lead data management transformation initiatives to enhance data quality and accessibility across 1800+ branches</li>
-                  <li>Develop and implement data governance policies adopted bank-wide</li>
-                  <li>Design automated data validation processes reducing errors by 35%</li>
-                  <li>Collaborate with cross-functional teams to optimize core banking systems</li>
-                  <li>Analyze business requirements and propose technical solutions</li>
+          <div class="experience-timeline">
+            <div class="experience-item current">
+              <div class="experience-header">
+                <div class="experience-period">Jan 2024 - Present</div>
+                <div class="experience-badge current-role">Current Role</div>
+              </div>
+              <h3 class="experience-title">Junior IS Officer III</h3>
+              <h4 class="experience-company">Commercial Bank of Ethiopia</h4>
+              
+              <div class="experience-highlights">
+                <div class="highlight-metric">
+                  <span class="metric-number">1800+</span>
+                  <span class="metric-label">Branches Impacted</span>
+                </div>
+                <div class="highlight-metric">
+                  <span class="metric-number">35%</span>
+                  <span class="metric-label">Error Reduction</span>
+                </div>
+                <div class="highlight-metric">
+                  <span class="metric-number">200+</span>
+                  <span class="metric-label">Hours Saved</span>
+                </div>
+              </div>
+
+              <div class="experience-content">
+                <h5>Key Achievements</h5>
+                <ul class="achievement-list">
+                  <li>Led data management transformation initiatives enhancing data quality and accessibility across all branches</li>
+                  <li>Developed and implemented bank-wide data governance policies adopted as organizational standard</li>
+                  <li>Designed automated data validation processes reducing operational errors significantly</li>
+                  <li>Collaborated with cross-functional teams to optimize core banking systems performance</li>
+                  <li>Analyzed complex business requirements and proposed innovative technical solutions</li>
                 </ul>
               </div>
             </div>
 
-            <div class="timeline-item right">
-              <div class="timeline-content">
-                <div class="timeline-date">Jul 2023 - Jan 2024</div>
-                <h3>Junior Information System Officer I</h3>
-                <h4>Commercial Bank of Ethiopia</h4>
-                <ul>
-                  <li>Assisted in system upgrades affecting all branch operations</li>
-                  <li>Developed training materials for new banking software implementations</li>
-                  <li>Participated in data migration projects with 99.8% accuracy rate</li>
-                  <li>Provided technical support for core banking systems</li>
+            <div class="experience-item">
+              <div class="experience-header">
+                <div class="experience-period">Jul 2023 - Jan 2024</div>
+              </div>
+              <h3 class="experience-title">Junior IS Officer I</h3>
+              <h4 class="experience-company">Commercial Bank of Ethiopia</h4>
+              
+              <div class="experience-content">
+                <h5>Key Contributions</h5>
+                <ul class="achievement-list">
+                  <li>Assisted in critical system upgrades affecting all branch operations nationwide</li>
+                  <li>Developed comprehensive training materials for new banking software implementations</li>
+                  <li>Participated in high-stakes data migration projects achieving 99.8% accuracy rate</li>
+                  <li>Provided expert technical support for core banking systems troubleshooting</li>
                 </ul>
               </div>
             </div>
 
-            <div class="timeline-item left">
-              <div class="timeline-content">
-                <div class="timeline-date">Jan 2023 - Jul 2023</div>
-                <h3>Information System Trainee</h3>
-                <h4>Commercial Bank of Ethiopia</h4>
-                <ul>
-                  <li>Gained comprehensive understanding of banking operations and IT systems</li>
-                  <li>Assisted in troubleshooting technical issues</li>
-                  <li>Participated in system documentation projects</li>
-                  <li>Supported senior officers in daily IT operations</li>
+            <div class="experience-item">
+              <div class="experience-header">
+                <div class="experience-period">Jan 2023 - Jul 2023</div>
+              </div>
+              <h3 class="experience-title">IS Trainee</h3>
+              <h4 class="experience-company">Commercial Bank of Ethiopia</h4>
+              
+              <div class="experience-content">
+                <h5>Foundation Building</h5>
+                <ul class="achievement-list">
+                  <li>Gained comprehensive understanding of banking operations and IT infrastructure</li>
+                  <li>Assisted senior officers in troubleshooting complex technical issues</li>
+                  <li>Participated in system documentation and process improvement projects</li>
+                  <li>Supported daily IT operations while learning organizational best practices</li>
                 </ul>
               </div>
             </div>
+          </div>
+
+          <div class="career-progression">
+            <h3>Career Progression</h3>
+            <p>Promoted twice within 18 months, demonstrating exceptional performance and leadership potential in banking technology and cyber security applications.</p>
           </div>
         </div>
 
         <div class="section" id="education">
-          <h2 class="section-title">Education</h2>
-
-          <div class="resume-section">
-            <h3>Master of Science in Computer Science (Data Science Specialization)</h3>
-            <h4>American College of Technology | 2024 - Present</h4>
-            <p>
-              Currently advancing my expertise in data science through rigorous
-              graduate studies focusing on machine learning, big data analytics,
-              and business intelligence. This program complements my
-              professional work by providing cutting-edge knowledge in
-              data-driven decision making and predictive modeling.
-            </p>
-            <p>
-              <strong>Key Focus Areas:</strong> Machine Learning, Big Data
-              Technologies, Data Mining, Business Intelligence, Advanced
-              Statistics, Predictive Analytics
+          <h2 class="section-title">Education & Learning</h2>
+          
+          <div class="education-intro">
+            <p class="section-lead">
+              Combining advanced academic study in cyber security with practical application in Ethiopia's largest financial institution.
             </p>
           </div>
 
-          <div class="resume-section">
-            <h3>Bachelor of Science in Computer Science</h3>
-            <h4>Gambella University | 2018 - 2022</h4>
-            <p>
-              Graduated with comprehensive knowledge in programming, database
-              systems, and software engineering. My academic projects focused on
-              practical applications of technology in business environments.
-            </p>
-            <p>
-              <strong>Key Coursework:</strong> Database Management, Software
-              Engineering, Data Structures, Computer Networks, Web Development,
-              System Analysis and Design
-            </p>
+          <div class="education-grid">
+            <div class="education-item current-study">
+              <div class="education-status">In Progress</div>
+              <div class="education-content">
+                <h3>Master of Science in Computer Science</h3>
+                <h4>Cyber Security Specialization</h4>
+                <div class="education-meta">
+                  <span class="institution">American College of Technology</span>
+                  <span class="period">2024 - Present</span>
+                </div>
+                
+                <div class="education-description">
+                  <p>
+                    Advancing expertise in cyber security through rigorous graduate studies focusing on network security, threat analysis, and security frameworks. This program directly complements my professional work by providing cutting-edge knowledge in security-driven decision making and risk assessment.
+                  </p>
+                </div>
+
+                <div class="focus-areas">
+                  <h5>Key Focus Areas</h5>
+                  <div class="focus-tags">
+                    <span class="focus-tag">Network Security</span>
+                    <span class="focus-tag">Threat Intelligence</span>
+                    <span class="focus-tag">Penetration Testing</span>
+                    <span class="focus-tag">Security Frameworks</span>
+                    <span class="focus-tag">Advanced Cryptography</span>
+                    <span class="focus-tag">Risk Assessment</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="education-item completed">
+              <div class="education-status completed">Completed</div>
+              <div class="education-content">
+                <h3>Bachelor of Science in Computer Science</h3>
+                <div class="education-meta">
+                  <span class="institution">Gambella University</span>
+                  <span class="period">2018 - 2022</span>
+                </div>
+                
+                <div class="education-description">
+                  <p>
+                    Graduated with comprehensive knowledge in programming, database systems, and software engineering. Academic projects focused on practical applications of technology in business environments, laying the foundation for my banking IT career.
+                  </p>
+                </div>
+
+                <div class="coursework">
+                  <h5>Key Coursework</h5>
+                  <div class="coursework-list">
+                    <span>Database Management</span>
+                    <span>Software Engineering</span>
+                    <span>Data Structures</span>
+                    <span>Computer Networks</span>
+                    <span>Web Development</span>
+                    <span>System Analysis</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="resume-section">
+          <div class="capstone-project">
             <h3>Capstone Project</h3>
-            <h4>Web-based Civil and Vital Event Registration System</h4>
-            <ul>
-              <li>Developed a comprehensive system for recording and managing civil events</li>
-              <li>Implemented secure user authentication and data validation</li>
-              <li>Designed intuitive admin interfaces for data management</li>
-              <li>Technologies used: Django, PostgreSQL, JavaScript</li>
-            </ul>
+            <div class="project-card">
+              <h4>Web-based Civil and Vital Event Registration System</h4>
+              <p class="project-description">
+                Developed a comprehensive system for recording and managing civil events with secure user authentication, data validation, and intuitive admin interfaces.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Django</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">REST APIs</span>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="section" id="skills">
-          <h2 class="section-title">Technical Skills</h2>
-
-          <div class="resume-section">
-            <h3>Programming & Technologies</h3>
-            <ul>
-              <li><strong>Languages:</strong> Python, SQL, JavaScript, HTML/CSS</li>
-              <li><strong>Data Science:</strong> Pandas, NumPy, Scikit-learn, TensorFlow, Data Visualization</li>
-              <li><strong>Database:</strong> MySQL, PostgreSQL, Database Design</li>
-              <li><strong>Web Development:</strong> Django, Flask, REST APIs</li>
-              <li><strong>Other:</strong> Git, Linux, Docker</li>
-            </ul>
+          <h2 class="section-title">Technical Expertise</h2>
+          
+          <div class="skills-intro">
+            <p class="section-lead">
+              A comprehensive skill set spanning cyber security, data management, and banking technology, developed through hands-on experience and continuous learning.
+            </p>
           </div>
 
-          <div class="resume-section">
-            <h3>Banking IT Skills</h3>
-            <ul>
-              <li>Core Banking Systems</li>
-              <li>Data Governance & Quality Management</li>
-              <li>Process Automation</li>
-              <li>System Implementation</li>
-              <li>User Training & Support</li>
-              <li>Technical Documentation</li>
-            </ul>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <div class="category-header">
+                <div class="category-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Cyber Security</h3>
+              </div>
+              <div class="skills-list">
+                <div class="skill-item">
+                  <span class="skill-name">Network Security</span>
+                  <div class="skill-level expert"></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Penetration Testing</span>
+                  <div class="skill-level advanced"></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Security Frameworks</span>
+                  <div class="skill-level expert"></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Risk Assessment</span>
+                  <div class="skill-level advanced"></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Threat Analysis</span>
+                  <div class="skill-level advanced"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <div class="category-header">
+                <div class="category-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <h3>Programming & Development</h3>
+              </div>
+              <div class="skills-list">
+                <div class="skill-item">
+                  <span class="skill-name">Python</span>
+                  <div class="skill-level expert"></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">SQL</span>
+                  <div class="skill-level expert"></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">JavaScript</span>
+                  <div class="skill-level advanced"></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Django/Flask</span>
+                  <div class="skill-level advanced"></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">REST APIs</span>
+                  <div class="skill-level advanced"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <div class="category-header">
+                <div class="category-icon">
+                  <i class="fas fa-database"></i>
+                </div>
+                <h3>Data & Systems</h3>
+              </div>
+              <div class="skills-list">
+                <div class="skill-item">
+                  <span class="skill-name">Database Design</span>
+                  <div class="skill-level expert"></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">MySQL/PostgreSQL</span>
+                  <div class="skill-level expert"></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Data Governance</span>
+                  <div class="skill-level expert"></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Process Automation</span>
+                  <div class="skill-level advanced"></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">System Integration</span>
+                  <div class="skill-level advanced"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <div class="category-header">
+                <div class="category-icon">
+                  <i class="fas fa-university"></i>
+                </div>
+                <h3>Banking & Finance</h3>
+              </div>
+              <div class="skills-list">
+                <div class="skill-item">
+                  <span class="skill-name">Core Banking Systems</span>
+                  <div class="skill-level expert"></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Financial Data Analysis</span>
+                  <div class="skill-level advanced"></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Compliance Management</span>
+                  <div class="skill-level advanced"></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Change Management</span>
+                  <div class="skill-level expert"></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">User Training</span>
+                  <div class="skill-level expert"></div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="resume-section">
-            <h3>Professional Skills</h3>
-            <ul>
-              <li>Business Process Analysis</li>
-              <li>Change Management</li>
-              <li>Project Coordination</li>
-              <li>Cross-functional Collaboration</li>
-              <li>Problem Solving</li>
-              <li>Technical Communication</li>
-            </ul>
+          <div class="tools-section">
+            <h3>Tools & Technologies</h3>
+            <div class="tools-grid">
+              <div class="tool-item">
+                <i class="fab fa-git-alt"></i>
+                <span>Git</span>
+              </div>
+              <div class="tool-item">
+                <i class="fab fa-linux"></i>
+                <span>Linux</span>
+              </div>
+              <div class="tool-item">
+                <i class="fab fa-docker"></i>
+                <span>Docker</span>
+              </div>
+              <div class="tool-item">
+                <i class="fas fa-terminal"></i>
+                <span>CLI Tools</span>
+              </div>
+              <div class="tool-item">
+                <i class="fas fa-cloud"></i>
+                <span>Cloud Platforms</span>
+              </div>
+              <div class="tool-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Analytics Tools</span>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="section" id="certifications">
-          <h2 class="section-title">Certifications</h2>
+          <h2 class="section-title">Professional Certifications</h2>
+          
+          <div class="certifications-intro">
+            <p class="section-lead">
+              Continuous professional development through industry-recognized certifications in data science, cyber security, and change management.
+            </p>
+          </div>
 
-          <div class="certification-card">
-            <h3>
-              <a href="My-certificates/Data science_certificate.pdf" download>IBM Data Science Professional Certificate</a>
-            </h3>
-            <div class="certification-meta">
-              <span>Coursera Certification</span>
-              <span>2024</span>
+          <div class="certifications-grid">
+            <div class="certification-card featured">
+              <div class="cert-header">
+                <div class="cert-icon">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <div class="cert-badge featured">Featured</div>
+              </div>
+              <h3>
+                <a href="#" onclick="requestCertificateAccess('IBM Data Science Professional Certificate'); return false;">IBM Data Science Professional Certificate</a>
+              </h3>
+              <div class="cert-meta">
+                <span class="cert-provider">Coursera Certification</span>
+                <span class="cert-year">2024</span>
+              </div>
+              <div class="cert-description">
+                Comprehensive training in Python, Machine Learning, Data Analysis, SQL, and Data Visualization. Capstone project involved applying data science methodologies to solve real-world business problems in banking sector.
+              </div>
+              <div class="cert-skills">
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">Machine Learning</span>
+                <span class="skill-badge">SQL</span>
+                <span class="skill-badge">Data Visualization</span>
+              </div>
             </div>
-            <div class="certification-desc">
-              Comprehensive training in Python, Machine Learning, Data Analysis,
-              SQL, and Data Visualization. Capstone project involved applying
-              data science methodologies to solve real-world business problems.
+
+            <div class="certification-card">
+              <div class="cert-header">
+                <div class="cert-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+              </div>
+              <h3>
+                <a href="#" onclick="requestCertificateAccess('Python and Statistics for Financial Analysis'); return false;">Python and Statistics for Financial Analysis</a>
+              </h3>
+              <div class="cert-meta">
+                <span class="cert-provider">Coursera Certification</span>
+                <span class="cert-year">2023</span>
+              </div>
+              <div class="cert-description">
+                Specialized training in applying Python and statistical methods to financial data analysis and modeling, with direct applications to banking data analysis and risk assessment.
+              </div>
+              <div class="cert-skills">
+                <span class="skill-badge">Financial Analysis</span>
+                <span class="skill-badge">Statistics</span>
+                <span class="skill-badge">Risk Modeling</span>
+              </div>
+            </div>
+
+            <div class="certification-card">
+              <div class="cert-header">
+                <div class="cert-icon">
+                  <i class="fas fa-users-cog"></i>
+                </div>
+              </div>
+              <h3>
+                <a href="#" onclick="requestCertificateAccess('Influencing: Storytelling, Change Management & Governance'); return false;">Influencing: Storytelling, Change Management & Governance</a>
+              </h3>
+              <div class="cert-meta">
+                <span class="cert-provider">Macquarie University</span>
+                <span class="cert-year">2024</span>
+              </div>
+              <div class="cert-description">
+                Advanced training in leading transformations, negotiation techniques, and risk governance strategies essential for technology implementations in banking environments.
+              </div>
+              <div class="cert-skills">
+                <span class="skill-badge">Change Management</span>
+                <span class="skill-badge">Leadership</span>
+                <span class="skill-badge">Governance</span>
+              </div>
+            </div>
+
+            <div class="certification-card">
+              <div class="cert-header">
+                <div class="cert-icon">
+                  <i class="fas fa-exchange-alt"></i>
+                </div>
+              </div>
+              <h3>
+                <a href="#" onclick="requestCertificateAccess('Advanced Change Management'); return false;">Advanced Change Management</a>
+              </h3>
+              <div class="cert-meta">
+                <span class="cert-provider">KPMG</span>
+                <span class="cert-year">2023</span>
+              </div>
+              <div class="cert-description">
+                Professional certification in managing organizational change, with focus on technology implementations and user adoption strategies in financial institutions.
+              </div>
+              <div class="cert-skills">
+                <span class="skill-badge">Organizational Change</span>
+                <span class="skill-badge">Technology Implementation</span>
+                <span class="skill-badge">User Adoption</span>
+              </div>
+            </div>
+
+            <div class="certification-card">
+              <div class="cert-header">
+                <div class="cert-icon">
+                  <i class="fab fa-python"></i>
+                </div>
+              </div>
+              <h3>
+                <a href="#" onclick="requestCertificateAccess('Python Programming Certificate'); return false;">Python Programming Certificate</a>
+              </h3>
+              <div class="cert-meta">
+                <span class="cert-provider">Coursera Certification</span>
+                <span class="cert-year">2023</span>
+              </div>
+              <div class="cert-description">
+                Comprehensive training in Python programming with applications in data processing, automation, and system integration for banking operations.
+              </div>
+              <div class="cert-skills">
+                <span class="skill-badge">Python Programming</span>
+                <span class="skill-badge">Automation</span>
+                <span class="skill-badge">System Integration</span>
+              </div>
             </div>
           </div>
 
-          <div class="certification-card">
-            <h3>
-              <a href="My-certificates/Python and statistics For Financial Analysis.pdf" download>Python and Statistics for Financial Analysis</a>
-            </h3>
-            <div class="certification-meta">
-              <span>Coursera Certification</span>
-              <span>2023</span>
-            </div>
-            <div class="certification-desc">
-              Specialized training in applying Python and statistical methods to
-              financial data analysis and modeling, with direct applications to
-              banking data analysis.
-            </div>
-          </div>
-
-          <div class="certification-card">
-            <h3>
-              <a href="My-certificates/English Communication_certificate.pdf" download>Influencing: Storytelling, Change Management & Governance</a>
-            </h3>
-            <div class="certification-meta">
-              <span>Macquarie University</span>
-              <span>2024</span>
-            </div>
-            <div class="certification-desc">
-              Advanced training in leading transformations, negotiation
-              techniques, and risk governance strategies essential for
-              technology implementations in banking.
-            </div>
-          </div>
-
-          <div class="certification-card">
-            <h3>
-              <a href="My-certificates/KPMG-Advanced Change management.jpg" download>Advanced Change Management</a>
-            </h3>
-            <div class="certification-meta">
-              <span>KPMG</span>
-              <span>2023</span>
-            </div>
-            <div class="certification-desc">
-              Professional certification in managing organizational change, with
-              focus on technology implementations and user adoption strategies
-              in financial institutions.
-            </div>
-          </div>
-
-          <div class="certification-card">
-            <h3>
-              <a href="My-certificates/Python_certificate.pdf" download>Python Programming Certificate</a>
-            </h3>
-            <div class="certification-meta">
-              <span>Coursera Certification</span>
-              <span>2023</span>
-            </div>
-            <div class="certification-desc">
-              Comprehensive training in Python programming with applications in
-              data processing, automation, and system integration.
+          <div class="certification-note">
+            <div class="note-content">
+              <i class="fas fa-info-circle"></i>
+              <p>All certificates are available upon request. Please contact me to access detailed certification documents and verification information.</p>
             </div>
           </div>
         </div>
 
         <div class="section" id="resume">
           <h2 class="section-title">Resume</h2>
-          <a href="#" class="resume-download" id="downloadResume"><i class="fas fa-download"></i> Download One-Page Resume</a>
+          <a href="#" class="resume-download" id="downloadResume"><i class="fas fa-envelope"></i> Request Resume Access</a>
 
           <div id="resumeContent">
             <div class="resume-header">
               <img
-                src="image/Portfolio.jpg"
+                src="https://gurmudemuma.github.io/image/Portfolio.jpg"
                 alt="Profile Photo"
                 class="resume-photo"
                 id="resumePhoto"
                 crossorigin="anonymous"
               />
               <div class="resume-header-text">
-                <h1 class="resume-name">Gurmu Demuma, B.Sc.</h1>
+                <h1 class="resume-name">Gurmu Demuma</h1>
                 <p class="resume-title">
-                  Junior Information System Officer II | MSc Student in Data Science
+                  Junior IS Officer III at Commercial Bank of Ethiopia | MSc Student in Cyber Security
                 </p>
                 <div class="resume-contact">
                   <p><i class="fas fa-envelope"></i>gurmud5@gmail.com</p>
-                  <p><i class="fas fa-phone"></i>+251-9-26-10-83-20</p>
+                  <p><i class="fas fa-phone"></i>+2519-26-10-8320</p>
                   <p><i class="fas fa-map-marker-alt"></i>Addis Ababa, Ethiopia</p>
                 </div>
               </div>
@@ -1369,7 +3070,7 @@
             <div class="resume-section">
               <h3>Professional Summary</h3>
               <p>
-                Computer Science professional currently pursuing a Master's in Data Science while working in banking information systems. Combines academic knowledge in advanced analytics with practical experience in data management transformation at Ethiopia's largest financial institution.
+                Computer Science professional currently pursuing a Master's in Cyber Security while working in banking information systems. Combines academic knowledge in advanced security frameworks with practical experience in data management transformation at Ethiopia's largest financial institution.
               </p>
             </div>
 
@@ -1378,7 +3079,7 @@
                 <div class="resume-section">
                   <h3>Professional Experience</h3>
 
-                  <h4>Junior Information System Officer II</h4>
+                  <h4>Junior IS Officer III</h4>
                   <p class="date-location">Commercial Bank of Ethiopia | Jan 2024 - Present</p>
                   <ul>
                     <li>Lead data management transformation initiatives</li>
@@ -1387,7 +3088,7 @@
                     <li>Optimize core banking systems</li>
                   </ul>
 
-                  <h4>Junior Information System Officer I</h4>
+                  <h4>Junior IS Officer I</h4>
                   <p class="date-location">Commercial Bank of Ethiopia | Jul 2023 - Jan 2024</p>
                   <ul>
                     <li>Assisted in system upgrades for 1800+ branches</li>
@@ -1398,7 +3099,7 @@
 
                 <div class="resume-section">
                   <h3>Education</h3>
-                  <h4>MSc in Computer Science (Data Science)</h4>
+                  <h4>MSc in Computer Science (Cyber Security)</h4>
                   <p class="date-location">American College of Technology | 2024 - Present</p>
 
                   <h4>BSc in Computer Science</h4>
@@ -1411,7 +3112,7 @@
                   <h3>Technical Skills</h3>
                   <ul>
                     <li><strong>Programming:</strong> Python, SQL, JavaScript</li>
-                    <li><strong>Data Science:</strong> Pandas, NumPy, Scikit-learn</li>
+                    <li><strong>Cyber Security:</strong> Network Security, Penetration Testing</li>
                     <li><strong>Database:</strong> MySQL, PostgreSQL</li>
                     <li><strong>Banking IT:</strong> Core Systems, Data Governance</li>
                     <li><strong>Tools:</strong> Git, Linux, Docker</li>
@@ -1431,8 +3132,8 @@
                 <div class="resume-section">
                   <h3>Key Achievements</h3>
                   <ul>
-                    <li>Improved data quality by 40%</li>
-                    <li>Reduced processing errors by 35%</li>
+                    <li>Improved data quality significantly</li>
+                    <li>Reduced processing errors substantially</li>
                     <li>Promoted twice within 18 months</li>
                     <li>Developed automation saving 200+ hours</li>
                   </ul>
@@ -1443,219 +3144,366 @@
         </div>
 
         <div class="section" id="contact">
-          <h2 class="section-title">Contact</h2>
-          <form action="https://formspree.io/f/mbloeqra" method="POST" class="contact-form" id="contactForm">
-            <input type="hidden" name="_subject" value="New Portfolio Message" />
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" class="form-control" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" class="form-control" required />
-            </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" class="form-control" required />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" class="form-control" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-          </form>
+          <h2 class="section-title">Let's Connect</h2>
+          
+          <div class="contact-intro">
+            <p class="section-lead">
+              Ready to discuss cyber security solutions, banking technology projects, or collaboration opportunities? I'd love to hear from you.
+            </p>
+          </div>
 
-          <div style="margin-top: 3rem">
-            <h3>Direct Contact</h3>
-            <p><i class="fas fa-envelope"></i> Email: gurmud5@gmail.com</p>
-            <p><i class="fas fa-phone"></i> Phone: +251-9-26-10-83-20</p>
-            <p><i class="fas fa-map-marker-alt"></i> Location: Addis Ababa, Ethiopia</p>
+          <div class="contact-content">
+            <div class="contact-form-section">
+              <h3>Send a Message</h3>
+              <form action="https://formspree.io/f/mbloeqra" method="POST" class="contact-form" id="contactForm">
+                <input type="hidden" name="_subject" value="New Portfolio Message" />
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" class="form-control" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control" required />
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <select id="subject" name="subject" class="form-control" required>
+                    <option value="">Select a topic...</option>
+                    <option value="Collaboration Opportunity">Collaboration Opportunity</option>
+                    <option value="Consulting Inquiry">Consulting Inquiry</option>
+                    <option value="Resume Request">Resume Request</option>
+                    <option value="Certificate Request">Certificate Request</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" class="form-control" rows="6" placeholder="Tell me about your project, question, or how we might work together..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                  <i class="fas fa-paper-plane"></i>
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            <div class="contact-info-section">
+              <div class="contact-card">
+                <h3>Direct Contact</h3>
+                <div class="contact-methods">
+                  <div class="contact-method">
+                    <div class="contact-icon">
+                      <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                      <span class="contact-label">Email</span>
+                      <a href="mailto:gurmud5@gmail.com" class="contact-value">gurmud5@gmail.com</a>
+                    </div>
+                  </div>
+                  
+                  <div class="contact-method">
+                    <div class="contact-icon">
+                      <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                      <span class="contact-label">Phone</span>
+                      <a href="tel:+251926108320" class="contact-value">+2519-26-10-8320</a>
+                    </div>
+                  </div>
+                  
+                  <div class="contact-method">
+                    <div class="contact-icon">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                      <span class="contact-label">Location</span>
+                      <span class="contact-value">Addis Ababa, Ethiopia</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="social-card">
+                <h3>Professional Networks</h3>
+                <div class="social-methods">
+                  <a href="https://www.linkedin.com/in/gurmu-demuma-a846322b1/" class="social-method" target="_blank">
+                    <div class="social-icon linkedin">
+                      <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="social-details">
+                      <span class="social-label">LinkedIn</span>
+                      <span class="social-value">Connect professionally</span>
+                    </div>
+                  </a>
+                  
+                  <a href="https://github.com/gurmudemuma?tab=repositories" class="social-method" target="_blank">
+                    <div class="social-icon github">
+                      <i class="fab fa-github"></i>
+                    </div>
+                    <div class="social-details">
+                      <span class="social-label">GitHub</span>
+                      <span class="social-value">View my code</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="availability-card">
+                <h3>Availability</h3>
+                <div class="availability-status">
+                  <div class="status-indicator available"></div>
+                  <span>Available for consulting and collaboration</span>
+                </div>
+                <p class="availability-note">
+                  Currently open to discussing cyber security projects, banking technology consulting, and collaborative opportunities in data management.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="response-time">
+            <div class="response-info">
+              <i class="fas fa-clock"></i>
+              <span>I typically respond within 24 hours</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Navigation Script v3.0 - Fixed -->
     <script>
-      // Navigation
-      document.querySelectorAll(".nav-item").forEach((item) => {
-        item.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelectorAll(".nav-item").forEach((navItem) => {
-            navItem.classList.remove("active");
-          });
-          this.classList.add("active");
-          document.querySelectorAll(".section").forEach((section) => {
-            section.classList.remove("active");
-          });
-          const sectionId = this.getAttribute("data-section");
-          document.getElementById(sectionId).classList.add("active");
-        });
-      });
-
-      // Profile Image Upload
-      document.getElementById("profileImage").addEventListener("click", function() {
-        document.getElementById("imageUpload").click();
-      });
-
-      document.getElementById("imageUpload").addEventListener("change", function(e) {
-        if (e.target.files && e.target.files[0]) {
-          const reader = new FileReader();
-          reader.onload = function(event) {
-            document.getElementById("profileImage").src = event.target.result;
-            document.getElementById("resumePhoto").src = event.target.result;
-            localStorage.setItem("profileImage", event.target.result);
-          };
-          reader.readAsDataURL(e.target.files[0]);
-        }
-      });
-
-      // Dark Mode Toggle
-      document.getElementById("themeToggle").addEventListener("click", function() {
-        document.body.classList.toggle("dark-mode");
-        const icon = this.querySelector("i");
-        if (document.body.classList.contains("dark-mode")) {
-          icon.classList.replace("fa-moon", "fa-sun");
-          localStorage.setItem("darkMode", "enabled");
-        } else {
-          icon.classList.replace("fa-sun", "fa-moon");
-          localStorage.setItem("darkMode", "disabled");
-        }
-      });
-
-      // Enhanced PDF Generation with better image handling
-      document.getElementById("downloadResume").addEventListener("click", function(e) {
-        e.preventDefault();
+      document.addEventListener("DOMContentLoaded", () => {
+        console.log("=== NAVIGATION SYSTEM INITIALIZING ===");
         
-        const originalText = this.innerHTML;
-        this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
-        this.disabled = true;
-
-        // Create clone with preserved styles
-        const element = document.getElementById("resumeContent").cloneNode(true);
+        // Navigation and CTA handling
+        const navItems = document.querySelectorAll(".nav-item, .cta-primary, .cta-secondary, .contact-cta");
+        console.log("Found navigation items:", navItems.length);
         
-        // Ensure the image is loaded properly for PDF
-        const photo = element.querySelector(".resume-photo");
-        if (photo) {
-          photo.style.maxWidth = "70px";
-          photo.style.maxHeight = "70px";
-        }
-
-        const opt = {
-          margin: 10,
-          filename: "Gurmu_Demuma_Resume.pdf",
-          image: { 
-            type: 'jpeg', 
-            quality: 0.98 
-          },
-          html2canvas: {
-            scale: 2, // Higher scale for better quality
-            logging: false,
-            useCORS: true,
-            allowTaint: true,
-            scrollX: 0,
-            scrollY: 0,
-            onclone: function(clonedDoc) {
-              // Force styles for PDF
-              clonedDoc.body.style.fontFamily = "'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"; // Ensure font is applied
-              clonedDoc.body.style.fontSize = '11pt'; // Match new CSS
-              clonedDoc.body.style.lineHeight = '1.5'; // Match new CSS
-              clonedDoc.body.style.color = '#444'; // Match new CSS
-              
-              // Ensure photo is properly sized
-              const clonedPhoto = clonedDoc.querySelector(".resume-photo");
-              if (clonedPhoto) {
-                clonedPhoto.style.width = '100px'; // Match new CSS
-                clonedPhoto.style.height = '100px'; // Match new CSS
-                clonedPhoto.style.objectFit = 'cover';
-              }
-              
-              // Adjust spacing for PDF
-              const sections = clonedDoc.querySelectorAll(".resume-section");
-              sections.forEach(section => {
-                section.style.marginBottom = '15px'; // Adjusted for better PDF spacing
-              });
+        navItems.forEach((item, index) => {
+          item.addEventListener("click", function (e) {
+            e.preventDefault();
+            
+            const sectionId = this.getAttribute("data-section");
+            console.log("Navigation clicked:", sectionId);
+            
+            if (!sectionId) {
+              console.error("No data-section attribute found");
+              return;
             }
-          },
-          jsPDF: {
-            unit: "mm",
-            format: "a4",
-            orientation: "portrait"
-          },
-          pagebreak: { 
-            mode: ['avoid-all', 'css', 'legacy'] 
+            
+            // Remove active from all nav items
+            document.querySelectorAll(".nav-item").forEach((navItem) => navItem.classList.remove("active"));
+            
+            // Add active to clicked nav item (only if it's a nav-item)
+            if (this.classList.contains("nav-item")) {
+              this.classList.add("active");
+            } else {
+              // For CTA buttons, activate the corresponding nav item
+              const correspondingNav = document.querySelector(`.nav-item[data-section="${sectionId}"]`);
+              if (correspondingNav) correspondingNav.classList.add("active");
+            }
+            
+            // Hide all sections
+            document.querySelectorAll(".section").forEach((section) => {
+              section.classList.remove("active");
+            });
+            
+            // Show target section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+              targetSection.classList.add("active");
+              console.log("SUCCESS: Activated section:", sectionId);
+              
+              // Close mobile sidebar after navigation
+              const sidebar = document.querySelector(".sidebar");
+              if (window.innerWidth <= 768 && sidebar && sidebar.classList.contains("open")) {
+                sidebar.classList.remove("open");
+              }
+            } else {
+              console.error("ERROR: Section not found:", sectionId);
+            }
+          });
+        });
+        
+        console.log("=== NAVIGATION SYSTEM READY ===");
+        
+        // Profile Image Upload
+        document.getElementById("profileImage").addEventListener("click", function() { document.getElementById("imageUpload").click(); });
+        document.getElementById("imageUpload").addEventListener("change", function(e) {
+          if (e.target.files && e.target.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+              const imageUrl = event.target.result;
+              document.getElementById("profileImage").src = imageUrl;
+              document.getElementById("resumePhoto").src = imageUrl;
+              localStorage.setItem("profileImage", imageUrl);
+            };
+            reader.readAsDataURL(e.target.files[0]);
+          }
+        });
+        
+        // Dark Mode Toggle
+        document.getElementById("themeToggle").addEventListener("click", function() {
+          document.body.classList.toggle("dark-mode");
+          const icon = this.querySelector("i");
+          if (document.body.classList.contains("dark-mode")) {
+            icon.classList.replace("fa-moon", "fa-sun");
+            localStorage.setItem("darkMode", "enabled");
+          } else {
+            icon.classList.replace("fa-sun", "fa-moon");
+            localStorage.setItem("darkMode", "disabled");
+          }
+        });
+        
+        // Certificate Access Request Function with Password Protection
+        window.requestCertificateAccess = function(certificateName) {
+          const password = prompt("Enter password to access certificate (or click Cancel to request access):");
+          
+          if (password === null) {
+            // User clicked Cancel - redirect to contact
+            alert("To access the \"" + certificateName + "\" certificate, please contact me first through the contact form or email. I'll be happy to share it with you!");
+            document.querySelectorAll(".nav-item").forEach((navItem) => navItem.classList.remove("active"));
+            document.querySelector('.nav-item[data-section="contact"]').classList.add("active");
+            document.querySelectorAll(".section").forEach((section) => section.classList.remove("active"));
+            document.getElementById("contact").classList.add("active");
+            const subjectField = document.getElementById("subject");
+            if (subjectField) subjectField.value = "Request for " + certificateName;
+            document.getElementById("contact").scrollIntoView({ behavior: 'smooth' });
+            return;
+          }
+          
+          // Check password (change "gurmu2024" to your preferred password)
+          if (password === "gurmu2024") {
+            // Map certificate names to file paths
+            const certFiles = {
+              "IBM Data Science Professional Certificate": "My-certificates/Data science_certificate.pdf",
+              "Python and Statistics for Financial Analysis": "My-certificates/Python and statistics For Financial Analysis.pdf",
+              "Influencing: Storytelling, Change Management & Governance": "My-certificates/English Communication_certificate.pdf",
+              "Advanced Change Management": "My-certificates/KPMG-Advanced Change management.jpg",
+              "Python Programming Certificate": "My-certificates/Python_certificate.pdf"
+            };
+            
+            const filePath = certFiles[certificateName];
+            if (filePath) {
+              window.open(filePath, '_blank');
+            } else {
+              alert("Certificate file not found.");
+            }
+          } else {
+            alert("Incorrect password. Please contact me to request access.");
           }
         };
-
-        // Generate PDF
-        html2pdf()
-          .set(opt)
-          .from(element)
-          .toPdf()
-          .get("pdf")
-          .then(function(pdf) {
-            // Add watermark if desired
-            const totalPages = pdf.internal.getNumberOfPages();
+        
+        // Request Resume Access with Password Protection
+        document.getElementById("downloadResume").addEventListener("click", function(e) {
+          e.preventDefault();
+          
+          const password = prompt("Enter password to download resume (or click Cancel to request access):");
+          
+          if (password === null) {
+            // User clicked Cancel - redirect to contact
+            alert("To access my resume and certificates, please contact me first through the contact form or email. I'll be happy to share them with you!");
+            document.querySelectorAll(".nav-item").forEach((navItem) => navItem.classList.remove("active"));
+            document.querySelector('.nav-item[data-section="contact"]').classList.add("active");
+            document.querySelectorAll(".section").forEach((section) => section.classList.remove("active"));
+            document.getElementById("contact").classList.add("active");
+            document.getElementById("contact").scrollIntoView({ behavior: 'smooth' });
+            return;
+          }
+          
+          // Check password (change "gurmu2024" to your preferred password)
+          if (password === "gurmu2024") {
+            // Generate and download PDF resume in dark mode - full page coverage
+            const element = document.getElementById("resumeContent");
             
-            for (let i = 1; i <= totalPages; i++) {
-              pdf.setPage(i);
-              pdf.setFontSize(30);
-              pdf.setTextColor(200, 200, 200);
-              pdf.setGState(new pdf.GState({ opacity: 0.1 }));
-              pdf.text(
-                "Gurmu Demuma",
-                pdf.internal.pageSize.getWidth() / 2,
-                pdf.internal.pageSize.getHeight() / 2,
-                { angle: 45, align: "center" }
-              );
+            // Ensure dark mode is active for PDF generation
+            const wasDarkMode = document.body.classList.contains("dark-mode");
+            if (!wasDarkMode) {
+              document.body.classList.add("dark-mode");
             }
-          })
-          .save()
-          .finally(() => {
-            document.getElementById("downloadResume").innerHTML = originalText;
-            document.getElementById("downloadResume").disabled = false;
-          });
-      });
-
-      // Contact Form
-      document.getElementById("contactForm").addEventListener("submit", function(e) {
-        e.preventDefault();
-        const form = e.target;
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
+            
+            // Store original styles
+            const originalPadding = element.style.padding;
+            const originalMargin = element.style.margin;
+            const originalBoxShadow = element.style.boxShadow;
+            const originalBorderRadius = element.style.borderRadius;
+            const originalMinHeight = element.style.minHeight;
+            
+            // Adjust styles for full page coverage - no white margins
+            element.style.padding = '0.5in';
+            element.style.margin = '0';
+            element.style.boxShadow = 'none';
+            element.style.borderRadius = '0';
+            element.style.minHeight = '10.8in';
+            
+            const opt = {
+              margin: 0,
+              filename: 'Gurmu_Demuma_Resume.pdf',
+              image: { type: 'jpeg', quality: 0.95 },
+              html2canvas: { 
+                scale: 1.5,
+                useCORS: true,
+                logging: false
+              },
+              jsPDF: { 
+                unit: 'in', 
+                format: 'letter', 
+                orientation: 'portrait',
+                compress: true
+              },
+              pagebreak: { mode: 'avoid-all' }
+            };
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+              // Restore original styles
+              element.style.padding = originalPadding;
+              element.style.margin = originalMargin;
+              element.style.boxShadow = originalBoxShadow;
+              element.style.borderRadius = originalBorderRadius;
+              element.style.minHeight = originalMinHeight;
+              
+              // Restore original mode after PDF generation
+              if (!wasDarkMode) {
+                document.body.classList.remove("dark-mode");
+              }
+            });
+          } else {
+            alert("Incorrect password. Please contact me to request access.");
+          }
+        });
         
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        submitBtn.disabled = true;
+        // Contact Form
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+          e.preventDefault();
+          const form = e.target;
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const originalText = submitBtn.innerHTML;
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+          submitBtn.disabled = true;
+          fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+            .then(response => { if (response.ok) { alert("Thank you for your message! I will get back to you soon."); form.reset(); } else { throw new Error("Network response was not ok"); } })
+            .catch(error => { alert("There was a problem sending your message. Please try again later."); console.error("Error:", error); })
+            .finally(() => { submitBtn.innerHTML = originalText; submitBtn.disabled = false; });
+        });
         
-        fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" }
-        })
-          .then(response => {
-            if (response.ok) {
-              alert("Thank you for your message! I will get back to you soon.");
-              form.reset();
-            } else {
-              throw new Error("Network response was not ok");
-            }
-          })
-          .catch(error => {
-            alert("There was a problem sending your message. Please try again later.");
-            console.error("Error:", error);
-          })
-          .finally(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-          });
-      });
-
-      // Initialize
-      window.addEventListener("DOMContentLoaded", () => {
-        // Load profile image
+        // Load profile image and ensure resume photo is visible
         const savedImage = localStorage.getItem("profileImage");
-        if (savedImage) {
-          document.getElementById("profileImage").src = savedImage;
-          document.getElementById("resumePhoto").src = savedImage;
+        const profileImg = document.getElementById("profileImage");
+        const resumePhoto = document.getElementById("resumePhoto");
+        if (savedImage) { profileImg.src = savedImage; resumePhoto.src = savedImage; } 
+        else { resumePhoto.src = "https://gurmudemuma.github.io/image/Portfolio.jpg"; }
+        if (resumePhoto) {
+          resumePhoto.style.display = "block"; resumePhoto.style.width = "100px"; resumePhoto.style.height = "100px";
+          resumePhoto.style.objectFit = "cover"; resumePhoto.style.borderRadius = "50%"; resumePhoto.style.border = "4px solid #3498db";
+          resumePhoto.onerror = function() { if (!this.src.includes("gurmudemuma.github.io")) { this.src = "https://gurmudemuma.github.io/image/Portfolio.jpg"; } };
         }
         
         // Load dark mode preference
@@ -1663,30 +3511,41 @@
           document.body.classList.add("dark-mode");
           document.querySelector("#themeToggle i").classList.replace("fa-moon", "fa-sun");
         }
-// Mobile Menu Toggle
+        
+        // Desktop and Mobile Menu Toggle
         const menuToggle = document.getElementById("menuToggle");
         const sidebar = document.querySelector(".sidebar");
-
-        if (menuToggle && sidebar) {
-          menuToggle.addEventListener("click", () => {
-            sidebar.classList.toggle("open");
+        const container = document.querySelector(".container");
+        if (menuToggle && sidebar && container) {
+          menuToggle.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (window.innerWidth <= 768) { 
+              sidebar.classList.toggle("open"); 
+            } else { 
+              sidebar.classList.toggle("collapsed"); 
+              container.classList.toggle("sidebar-collapsed"); 
+            }
           });
-
-          // Close sidebar when a nav item is clicked (for mobile)
-          document.querySelectorAll(".sidebar .nav-item").forEach(item => {
-            item.addEventListener("click", () => {
-              if (sidebar.classList.contains("open")) {
-                sidebar.classList.remove("open");
-              }
-            });
-          });
-
-          // Close sidebar if user clicks outside of it
+          
+          // Close sidebar when clicking outside (mobile only)
           document.addEventListener('click', function(event) {
-            const isClickInsideSidebar = sidebar.contains(event.target);
-            const isClickOnMenuToggle = menuToggle.contains(event.target);
-            if (!isClickInsideSidebar && !isClickOnMenuToggle && sidebar.classList.contains('open')) {
-              sidebar.classList.remove('open');
+            if (window.innerWidth <= 768) {
+              const isClickInsideSidebar = sidebar.contains(event.target);
+              const isClickOnMenuToggle = menuToggle.contains(event.target);
+              if (!isClickInsideSidebar && !isClickOnMenuToggle && sidebar.classList.contains('open')) { 
+                sidebar.classList.remove('open'); 
+              }
+            }
+          });
+          
+          // Handle window resize
+          window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) { 
+              sidebar.classList.remove('open'); 
+            } else { 
+              sidebar.classList.remove('collapsed'); 
+              container.classList.remove('sidebar-collapsed'); 
             }
           });
         }
